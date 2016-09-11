@@ -1,0 +1,87 @@
+<div class="container content">
+    <div class="heading heading-v1 margin-bottom-20">
+        <h2>{{carrito.titulo}}</h2>
+    </div>
+    <form class="shopping-cart" action="#">
+        <section>
+            <div class="table-responsive">
+                <table class="table table-striped">                                    
+                    <tr>
+                        <td>
+                            <div class="product-it-in">
+                                <a>Celular</a>
+                            </div>  
+                        </td>
+                        <td>
+                            <button type="button" class="close" onclick="alert('ELIMINAR PRODUCTO DE CARRITO')"><span>&times;</span><span class="sr-only">Cerrar</span></button>
+                        </td>                                
+                    </tr>
+                    <tr>
+                        <td class="product-in-table">
+                            <img class="img-responsive" src="assets/img/productos/telefono.png" alt="">
+                        </td>                                
+                        <td>
+                            <button type='button' class="quantity-button" name='subtract' onclick='javascript: subtractQty4();' value='-'>-</button>
+                            <input type='text' class="quantity-field" name='qty4' value="1" id='qty4'/>
+                            <button type='button' class="quantity-button" name='add' onclick='javascript: document.getElementById("qty4").value++;' value='+'>+</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="shop-red">
+                            <strike>$ 500.00</strike> - 40%
+                        </td>
+                        <td>
+                            <strong> $ 200.00</strong>
+                        </td>
+                    </tr>                                 
+                    <tr>
+                        <td>
+                            <p>
+                                Subtotal:
+                            </p>
+                        </td>                                
+                        <td>
+                            <p>
+                                $ 200.00
+                            </p>
+                        </td>                                  
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                Costo de envío
+                            </p>
+                        </td>                                
+                        <td>
+                            <p>
+                                $ 0.00
+                            </p>
+                        </td>                                  
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                Total:
+                            </p>
+                        </td>                                
+                        <td>
+                            <p>
+                                $ 200.00
+                            </p>
+                        </td>                        
+                    </tr>  
+                    <tr>
+                        <td colspan="2">
+                            <p>Código de promoción <input class="form-control margin-bottom-10" name="code" type="text"><button style="width: 100%" type="button" class="btn-u" onclick="alert('VALIDAR CUPON Y APLICAR DESCUENTO EN EL TOTAL')">Aplicar</button></p>                                                                      
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <button style="width: 100%" type="button" class="btn-u" onclick="location.href='#direccion_envio'">Procesar compra</button>
+                        </td>
+                    </tr>    
+                </table>                               
+            </div>                
+        </section>	       
+    </form> 
+</div>

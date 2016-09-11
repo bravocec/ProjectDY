@@ -1,0 +1,40 @@
+<div class="container content">
+    <div class="heading heading-v1 margin-bottom-20">
+        <h2>Iniciar sesión</h2>
+    </div>
+    <div class="col-md-4 col-md-offset-4" style="margin-bottom: -15px">
+        <div class="row" ng-bind-html="mensaje_login" ></div>
+    </div>
+    <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+        <form id="sky-form4" class="sky-form">
+            <fieldset>
+                <div class="row">
+                    <section>
+                        <label class="label">Email</label>
+                        <label class="input">
+                            <i class="icon-append fa fa-envelope"></i>
+                            <input type="email" name="email" class="form-control" required="requried" ng-model="data.username">
+                        </label>
+                    </section>
+                    <section>
+                        <label class="label">Contraseña</label>
+                        <label class="input">
+                            <i class="icon-append fa fa-lock"></i>
+                            <input type="password" name="password" id="password" ng-model="data.password">
+                        </label>
+                    </section>
+                </div>
+                <div class="row">
+                    <button style="width: 100%" class="btn-u" type="submit" ng-click="login()">Iniciar sesión</button>
+                </div>	                
+                <div class="row color-green" style="margin-top: 20px">
+                    <a class="color-green" href="#recuperar_password">Recuperar password</a>
+                    <hr>
+                    <a class="color-green" href="#registro_cliente">Registrarse</a>
+                    <hr>
+                    <a class="color-green" href="#proveedor_registro">Registro proveedor</a> 
+                </div>	                   
+            </fieldset>				
+        </form>   
+    </div>
+</div>

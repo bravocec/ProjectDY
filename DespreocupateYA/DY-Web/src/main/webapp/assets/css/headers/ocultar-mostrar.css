@@ -1,0 +1,28 @@
+.ocultar-en-escritorio {
+            max-height: 0px;
+            font-size: 0;
+            display: none !important;
+}
+@media only screen and (max-width: 640px) {
+.ocultar-en-escritorio {
+            display: inline !important;
+            width : auto !important;
+            max-height: inherit !important;
+            overflow : visible !important;
+            float : none !important;
+}
+body .ocultar-en-movil {
+            display:none!important;
+}
+@media only screen and (max-width: 479px) {
+.ocultar-en-escritorio {
+            display: inline !important;
+            width : auto !important;
+            max-height: inherit !important;
+            overflow : visible !important;
+            float : none !important;
+}
+body .ocultar-en-movil {
+            display:none!important;
+}
+}

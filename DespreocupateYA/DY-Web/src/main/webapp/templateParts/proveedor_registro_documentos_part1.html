@@ -1,0 +1,48 @@
+<div class="container content">
+    <div class="heading heading-v1 margin-bottom-20">
+        <h2>{{proveedor_registro_documentos.titulo}}</h2>
+    </div>
+    <div class="col-md-6 col-md-offset-3" style="margin-bottom: -15px">
+        <div class="row" id="mensaje_docs" ></div>
+    </div>
+    <div class="row margin-bottom-30">
+        <form class="reg-page sky-form">
+            <fieldset>
+                <section class="col col-6">
+                    <label class="label">Imagen de sucursal</label>
+                    <label for="file" class="input input-file">
+                        <div class="button"><input type="file" file-model="imgSucursal" onchange="onChangueDocs(this)">Adjuntar</div><input id="fileNameSucursal" readonly="" type="text">
+                    </label>
+                </section>
+                <section class="col col-6">
+                    <label class="label">Identificación oficial</label>
+                    <label for="file" class="input input-file">
+                        <div class="button"><input  type="file" file-model="ife" onchange="this.parentNode.nextSibling.value = this.value">Adjuntar</div><input id="fileNameIfe" readonly="" type="text">
+                    </label>
+                </section>
+                <section class="col col-6">
+                    <label class="label">Comprobante de domicilio</label>
+                    <label for="file" class="input input-file">
+                        <div class="button"><input  type="file" file-model="comprobanteDomicilio" onchange="this.parentNode.nextSibling.value = this.value">Adjuntar</div><input id="fileNameCd" readonly="" type="text">
+                    </label>
+                </section>
+                <section class="col col-6">
+                    <label class="label">Estado de cuenta</label>
+                    <label for="file" class="input input-file">
+                        <div class="button"><input type="file" file-model="edoCuenta" onchange="this.parentNode.nextSibling.value = this.value">Adjuntar</div><input id="fileNameEdoCuenta" readonly="" type="text">
+                    </label>
+                </section> 
+                <section class="col col-6">
+
+                </section>
+                <section class="col col-6">
+                    <button style="width: 49%" class="btn-u pull-right" type="submit" ng-click="subirDocs()">Registrar</button>
+                </section>
+                <section class="col col-12 pull-right">
+                    <label class="label">A dar clic en <strong>Registrar</strong> estás aceptando nuestros <a id='terminoscondiciones' href='terminos' style='color:#0079AD;'>Términos y condiciones</a></label>
+                </section>   
+
+            </fieldset>  
+        </form>
+    </div>
+</div>

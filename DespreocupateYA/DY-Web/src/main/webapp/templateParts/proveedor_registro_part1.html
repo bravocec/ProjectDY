@@ -1,0 +1,171 @@
+<div class="container content">	
+    <div class="heading heading-v1 margin-bottom-20">
+        <h2>{{proveedor_registro.titulo}}</h2>
+        <p>¿Ya estas registrado? Clic <a href="#login" class="color-green">aquí</a> para acceder a tu cuenta.</p>
+    </div>
+    <div class="col-md-6 col-md-offset-3" style="margin-bottom: -15px">
+            <div class="row" id="mensaje_registro_prov" ></div>
+    </div>
+    <div class="row margin-bottom-30">
+        <form id="sky-form4" class="sky-form">
+            <fieldset>
+                <div class="row">
+                    <section class="col col-6">
+                        <label class="label">Nombre(s)</label>
+                        <label class="input">
+                            <i class="icon-append fa fa-user"></i>
+                            <input type="text" name="nombres" required="required" ng-model="data.nombres">
+                        </label>
+                    </section>
+                    <section class="col col-6">
+                            <label class="label">Apellido(s)</label>
+                            <label class="input">
+                                <i class="icon-append fa fa-user"></i>
+                                <input type="text" name="apellidos" required="required" ng-model="data.apellidos">
+                            </label>
+                    </section>
+                </div>	
+                <div class="row">
+                    <section class="col col-6">
+                        <label class="label">Email</label>
+                        <label class="input">
+                            <i class="icon-append fa fa-envelope"></i>
+                            <input type="email" name="email" class="form-control" required="requried" ng-model="data.email">
+                        </label>
+                    </section>
+                    <section class="col col-6">
+                        <label class="label">Razón Social</label>
+                        <label class="input">
+                            <i class="icon-append fa fa-user"></i>
+                            <input type="text" name="razon_social" required="required" ng-model="datap.razon_social">
+                        </label>
+                    </section>
+                </div>    
+                <div class="row">
+                    <section class="col col-6">
+                        <label class="label">RFC</label>
+                        <label class="input">
+                            <i class="icon-append fa fa-user"></i>
+                            <input type="text" name="rfc" ng-model="data.rfc">
+                        </label>
+                    </section>
+                    <section class="col col-6">
+                        <label class="label">Teléfono</label>
+                        <label class="input">
+                            <i class="icon-append fa fa-phone"></i>
+                            <input type="tel" id="phone" name="telefono" required="required" class="ng-valid" ng-model="datap.telefono">
+                        </label>
+                    </section>
+                </div>								
+                <div class="row">
+                    <section class="col col-6">
+                        <label class="label">Teléfono movil</label>
+                        <label class="input">
+                            <i class="icon-append fa fa-phone"></i>
+                            <input type="tel" id="phone2" name="telefono_movil" ng-model="datap.telefono_movil">
+                        </label>
+                    </section>
+                    <section class="col col-6">
+                        <label class="label">Calle</label>
+                        <label class="input">
+                            <i class="icon-append fa fa-book"></i>
+                            <input type="text" name="calle" required="required" ng-model="datad.calle">
+                        </label>
+                    </section>
+                </div>
+                <div class="row">
+                    <section class="col col-6">
+                        <label class="label">N° exterior</label>
+                        <label class="input">
+                            <i class="icon-append fa fa-book"></i>
+                            <input type="text" name="numero_exterior" required="required" ng-model="datad.noExterior">
+                        </label>
+                    </section>
+                    <section class="col col-6">
+                        <label class="label">N° interior</label>
+                        <label class="input">
+                            <i class="icon-append fa fa-book"></i>
+                            <input type="text" name="numero_interior" ng-model="datad.noInterior">
+                        </label>
+                    </section>
+                </div>
+				<div class="row">
+					<section class="col col-6">
+                        <label class="label">Colonia</label>
+						<label class="input">
+                            <i class="icon-append fa fa-book"></i>
+                            <input type="text" name="colonia" required="required" ng-model="datad.colonia">
+                        </label>
+                    </section>
+                    <section class="col col-6">
+                        <label class="label">Delegación</label>
+						<label class="input">
+                            <i class="icon-append fa fa-book"></i>
+                            <input type="text" name="delegación" required="required" ng-model="datad.delegacion">
+                        </label>
+                    </section>
+                </div>
+                <div class="row">
+					<section class="col col-6">
+                        <label class="label">Estado</label>
+						<label class="input">
+                            <i class="icon-append fa fa-book"></i>
+                            <input type="text" name="estado" required="required" ng-model="datad.estado">
+                        </label>
+                    </section>
+                    <section class="col col-6">
+                        <label class="label">Código postal</label>
+                        <label class="input">
+                            <i class="icon-append fa fa-book"></i>
+                            <input type="text" name="codigo_postal" required="required" ng-model="datad.cp">
+                        </label>
+                    </section>
+                </div>
+                 
+                <div class="row">
+                    <section class="col col-6">
+                        <label class="label">Entre la calle</label>
+                        <label class="input">
+                            <i class="icon-append fa fa-book"></i>
+                            <input type="text" name="caalle_x" ng-model="datad.entreCalle">
+                        </label>
+                    </section>
+                    <section class="col col-6">
+                        <label class="label">y la calle</label>
+                        <label class="input">
+                            <i class="icon-append fa fa-book"></i>
+                            <input type="text" name="calle_y" ng-model="datad.ycalle">
+                        </label>
+                    </section>
+                </div>  
+                <div class="row">
+                    <section class="col col-6">
+                        <label class="label">Password</label>
+                        <label class="input">
+                            <i class="icon-append fa fa-lock"></i>
+                            <input type="password" name="password" id="password" ng-model="data.password">
+                        </label>
+                    </section>
+                    <section class="col col-6">
+                        <label class="label">Confirmar password</label>
+                        <label class="input">
+                            <i class="icon-append fa fa-lock"></i>
+                            <input type="password" name="passwordConfirm" required="required">
+                        </label>
+                    </section>
+                </div>       
+                <div class="row"> 
+                    <section class="col col-6">
+                        &nbsp;
+                    </section>
+                    <section class="col col-6">
+                        <label class="label">Al dar clic en <strong>Registrar</strong> estas aceptando nuestros <a id='terminoscondiciones' href='terminos' style='color:#0079AD;'>Términos y condiciones</a></label>
+                    </section>
+                </div>  
+                <div class="row">
+                    <button style="width: 49%" class="btn-u pull-right" ng-click="registrar(); $event.stopPropagation();">Registrar</button>
+                </div>                
+            </fieldset>
+        </form>
+    </div>
+</div>     

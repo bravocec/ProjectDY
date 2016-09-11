@@ -1,0 +1,122 @@
+<div class="container profile">		
+    <div class="row">
+        <div class="container">
+            <ul class="breadcrumb-v5">
+                <li><a href="index.html#/proveedor_sucursales">Sucursales</a></li>
+                <li>Agregar sucursal</li>
+                <li>Registro sucursal</li>
+                <li class="active">Documentos sucursal</li>
+            </ul>
+        </div>
+        <div class="col-md-3 md-margin-bottom-40">
+            <img class="img-responsive profile-img margin-bottom-20" src="assets/img/user/isotipo_Turing.png" alt="">
+            <ul class="list-group sidebar-nav-v1 margin-bottom-40" id="sidebar-nav-1">
+                <li class="list-group-item">
+                    <a href="#proveedor_index"><i class="fa fa-user"></i> Perfil de proveedor</a>
+                </li>        
+                <li class="list-group-item">
+                    <a href="#proveedor_pedidos_abiertos"><i class="fa fa-history"></i> Pedidos abiertos</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="#proveedor_pedidos_historial"><i class="fa fa-history"></i> Historial de pedidos</a>
+                </li>   
+                <li class="list-group-item">
+                    <a href="#proveedor_productos_servicios_listado"><i class="fa fa-cubes"></i> Productos / Servicios</a>
+                </li>                                
+<!--                                <li class="list-group-item">
+                        <a href="#proveedor_reportes"><i class="fa fa-bar-chart-o"></i> Reportes</a>
+                </li>
+-->         </ul>
+            <ul class="list-group sidebar-nav-v1 margin-bottom-40" id="sidebar-nav-1">
+                <li class="list-group-item">
+                    <a href="#proveedor_datos_personales"><i class="fa fa-cog"></i> Datos personales</a>
+                </li>        
+                <li class="list-group-item">
+                    <a href="#proveedor_documentacion"><i class="fa fa-cog"></i> Documentación</a>
+                </li>                 
+                <li class="list-group-item active">
+                    <a><i class="fa fa-cog"></i> Sucursales</a>
+                </li>     
+                <li class="list-group-item">
+                    <a href="#proveedor_personal"><i class="fa fa-group"></i> Personal</a>
+                </li>                                
+            </ul>
+            <div class="panel-heading-v2 overflow-h">
+                <h2 class="heading-xs pull-left"><i class="fa fa-bar-chart-o"></i> Reporte</h2>
+                <a href="#"><i class="fa fa-cog pull-right"></i></a>
+            </div>
+            <h3 class="heading-xs">Ventas finalizadas<span class="pull-right">50</span></h3>
+            <div class="progress progress-u progress-xxs">
+                <div style="width: 25%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="92" role="progressbar" class="progress-bar progress-bar-u"></div>
+            </div>
+            <h3 class="heading-xs">Productos vendidos <span class="pull-right">120</span></h3>
+            <div class="progress progress-u progress-xxs">
+                <div style="width: 60%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="85" role="progressbar" class="progress-bar progress-bar-blue"></div>
+            </div>
+            <h3 class="heading-xs">Devoluciones <span class="pull-right">10</span></h3>
+            <div class="progress progress-u progress-xxs margin-bottom-40">
+                <div style="width: 5%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="64" role="progressbar" class="progress-bar progress-bar-dark"></div>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="profile-body">
+                <div class="heading heading-v1 margin-bottom-20">
+                    <h2>{{proveedor_sucursales_agregar_documentos.titulo}}</h2>
+                </div>                             
+                <div class="col-md-6 col-md-offset-3" style="margin-bottom: -15px">
+                    <div class="row" id="mensaje_docs" ></div>
+                </div>
+                <div>
+                    <form class="reg-page sky-form">
+                        <fieldset>
+                        </fieldset>
+                        <fieldset>
+                            <section>
+                                <label class="label">Imagen de sucursal</label>
+                                <label for="file" class="input input-file">
+                                    <div class="button"><input  type="file" file-model="imgSucursal" onchange="this.parentNode.nextSibling.value = this.value">Adjuntar</div><input readonly="" type="text">
+                                </label>
+                            </section>
+                        </fieldset>                        
+                        <fieldset>
+                            <section>
+                                <label class="label">Identificación oficial</label>
+                                <label for="file" class="input input-file">
+                                    <div class="button"><input  type="file" file-model="ife" onchange="this.parentNode.nextSibling.value = this.value">Adjuntar</div><input readonly="" type="text">
+                                </label>
+                            </section>
+                        </fieldset>																
+                        <fieldset>
+                            <section>
+                                <label class="label">Comprobante de domicilio</label>
+                                <label for="file" class="input input-file">
+                                    <div class="button"><input  type="file" file-model="comprobanteDomicilio" onchange="this.parentNode.nextSibling.value = this.value">Adjuntar</div><input readonly="" type="text">
+                                </label>
+                            </section>
+                        </fieldset>	
+                        <fieldset>
+                            <section>
+                                <label class="label">Estado de cuenta</label>
+                                <label for="file" class="input input-file">
+                                    <div class="button"><input type="file" file-model="edoCuenta" onchange="this.parentNode.nextSibling.value = this.value">Adjuntar</div><input readonly="" type="text">
+                                </label>
+                            </section>
+                        </fieldset>	
+                        <fieldset>                    
+                            <section class="pull-right"> 
+                                <label class="label">Términos y condiciones</label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="terminos_condiciones" ><i></i> Aceptar
+                                </label>
+                            </section>   
+                        </fieldset>        
+                        <footer>
+                            <button class="btn-u pull-right" type="submit" ng-click="subirDocs()">Registrar</button>
+                        </footer>
+                    </form>
+                </div>                   
+            </div>  
+        </div>                                
+    </div>
+</div>
+

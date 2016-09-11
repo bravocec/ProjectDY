@@ -1,0 +1,75 @@
+<div class="content container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3" style="padding-bottom: -20px">
+            <div class="row margin-bottom-5">
+                <div class="col-sm-4 result-category">
+                    <h2>{{categoria_mascotas.titulo}}</h2>
+                    <small class="shop-bg-green badge-results"> (3)<span class="item">
+                        <a href="#filtro"><i class="fa fa-filter" style="color: white"> Filtrar</i></a>
+                    </span></small> 
+                </div>
+                <div>                    
+                    <ul class="list-inline clear-both">
+                        <li class="sort-list-btn">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                    Popularidad <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu" style="background-color: white">
+                                    <li><a>Más vendidos</a></li>
+                                    <li><a>Popularidad</a></li>
+                                    <li><a>Valoración</a></li>
+                                    <li ng-click="sort('costo')"><a>Costo</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="sort-list-btn">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                    Mostrar 20 <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu" style="background-color: white">
+                                    <li><a>Todos</a></li>
+                                    <li><a>10</a></li>
+                                    <li><a>15</a></li>
+                                    <li><a>5</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>    
+            </div>           
+            <div class="row illustration-v2 margin-top-20" ng-controller="categoriaMascotasController">
+                <div class="col-md-4" dir-paginate="data in productos|orderBy:sortKey:reverse|itemsPerPage:6">
+                    <div class="product-img product-img-brd">
+                        <a href="#productos"><img style="max-height:150px" class="full-width img-responsive" src="assets/img/productos/croquetas_1.jpg" alt="" /></a>
+                        <!--a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Ir!</a-->
+                    </div> 
+                    <div class="product-description product-description-brd margin-bottom-10">
+                        <div class="overflow-h margin-bottom-5">
+                            <div class="pull-left">
+                                <h4 class="title-price"><a href="#productos">{{ data.producto }} {{ data.marca }}</a></h4>
+                                <!--span class="gender text-uppercase">Costo de envío</span-->
+                                <span class="gender">Costo de envío $20.00</span>
+                            </div>    
+                            <div class="product-price">
+                                <span class="title-price">${{ data.costo }}</span>
+                            </div>
+                        </div>    
+                        <ul class="list-inline product-ratings">
+                            <li><i class="rating-selected fa fa-star"></i></li>
+                            <li><i class="rating-selected fa fa-star"></i></li>
+                            <li><i class="rating-selected fa fa-star"></i></li>
+                            <li><i class="rating fa fa-star"></i></li>
+                            <li><i class="rating fa fa-star"></i></li>
+                            <li class="like-icon"><a onclick="alert('AGREGAR A FAVORITOS')">Agregar a favoritos <i class="fa fa-heart"></i></a></li>
+                        </ul>    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" ></dir-pagination-controls>                                                          
+        </div>
+    </div>
+</div>

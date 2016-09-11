@@ -1,0 +1,140 @@
+<div class="container content profile">
+    <div class="row">
+        <div class="col-md-3 md-margin-bottom-40">
+            <img class="img-responsive profile-img margin-bottom-20" src="assets/img/user/isotipo_Turing.png" alt="">
+            <ul class="list-group sidebar-nav-v1 margin-bottom-40" id="sidebar-nav-1">
+                <li class="list-group-item active">
+                    <a><i class="fa fa-user"></i> Perfil de proveedor</a>
+                </li>                
+                <li class="list-group-item">
+                    <a href="#proveedor_pedidos_abiertos"><i class="fa fa-history"></i> Pedidos abiertos <span class="badge badge-sea rounded-x">3</span></a>
+                </li>
+                <li class="list-group-item">
+                    <a href="#proveedor_pedidos_historial"><i class="fa fa-history"></i> Historial de pedidos</a>
+                </li>   
+                <li class="list-group-item">
+                    <a href="#proveedor_productos_servicios_listado"><i class="fa fa-cubes"></i> Productos / Servicios</a>
+                </li>                                
+            </ul>
+            <ul class="list-group sidebar-nav-v1 margin-bottom-40" id="sidebar-nav-1">
+                <li class="list-group-item">
+                    <a href="#proveedor_datos_personales"><i class="fa fa-cog"></i> Datos personales</a>
+                </li>     
+                <li class="list-group-item">
+                    <a href="#proveedor_documentacion"><i class="fa fa-cog"></i> Documentación</a>
+                </li>                                 
+                <li class="list-group-item">
+                    <a href="#proveedor_sucursales"><i class="fa fa-cog"></i> Sucursales</a>
+                </li>     
+                <li class="list-group-item">
+                    <a href="#proveedor_personal"><i class="fa fa-group"></i> Personal</a>
+                </li>                                
+            </ul>
+            <div class="panel-heading-v2 overflow-h">
+                <h2 class="heading-xs pull-left"><i class="fa fa-bar-chart-o"></i> Reporte</h2>
+                <a href="#"><i class="fa fa-cog pull-right"></i></a>
+            </div>
+            <h3 class="heading-xs">Ventas finalizadas<span class="pull-right">50</span></h3>
+            <div class="progress progress-u progress-xxs">
+                <div style="width: 25%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="92" role="progressbar" class="progress-bar progress-bar-u"></div>
+            </div>
+            <h3 class="heading-xs">Productos vendidos <span class="pull-right">120</span></h3>
+            <div class="progress progress-u progress-xxs">
+                <div style="width: 60%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="85" role="progressbar" class="progress-bar progress-bar-blue"></div>
+            </div>
+            <h3 class="heading-xs">Devoluciones <span class="pull-right">10</span></h3>
+            <div class="progress progress-u progress-xxs margin-bottom-40">
+                <div style="width: 5%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="64" role="progressbar" class="progress-bar progress-bar-dark"></div>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="profile-body">
+                <div class="heading heading-v1 margin-bottom-20">
+                    <h2>{{proveedor_index.titulo}}</h2>
+                </div>
+                <div class="row margin-bottom-10">
+                    <div class="col-sm-6 sm-margin-bottom-20">
+                        <div class="service-block-v3 service-block-u">
+                            <i class="icon-calculator"></i>
+                            <span class="service-heading">Total de ventas</span>
+                            <span class="counter">52,147</span>
+                            <div class="clearfix margin-bottom-10"></div>
+                            
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="service-block-v3 service-block-blue">
+                            <i class="icon-screen-desktop"></i>
+                            <span class="service-heading">Total de productos</span>
+                            <span class="counter">324,056</span>
+                            <div class="clearfix margin-bottom-10"></div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row margin-bottom-20">
+                    <!--Notificaciones-->
+                    <div class="col-sm-12 sm-margin-bottom-30">
+                        <div class="panel panel-profile">
+                            <div class="panel-heading overflow-h">
+                                <h2 class="panel-title heading-sm pull-left"><i class="fa fa-comments"></i> Mis pedidos</h2>
+                                <a href="#proveedor_pedidos_abiertos"><i class="fa fa-cog pull-right"></i></a>
+                            </div>
+                            <div id="scrollbar3" class="panel-body no-padding mCustomScrollbar" data-mcs-theme="minimal-dark">
+                                <div class="alert-blocks alert-blocks-pending alert-dismissable">
+                                    <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                                    <img class="rounded-x" src="assets/img/testimonials/img3.jpg" alt="">
+                                    <div class="overflow-h">
+                                        <strong class="color-yellow">Pending... <small class="pull-right"><em>Just now</em></small></strong>
+                                        <p>Your friend request has been sent.</p>
+                                    </div>
+                                </div>
+                                <div class="alert-blocks alert-blocks-success alert-dismissable">
+                                    <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                                    <img class="rounded-x" src="assets/img/testimonials/img2.jpg" alt="">
+                                    <div class="overflow-h">
+                                        <strong class="color-green">Accepted. <small class="pull-right"><em>7 hours ago</em></small></strong>
+                                        <p>Your friend request has been accepted.</p>
+                                    </div>
+                                </div>
+                                <div class="alert-blocks alert-blocks-info alert-dismissable">
+                                    <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                                    <i class="icon-custom rounded-x icon-bg-blue fa fa-bolt"></i>
+                                    <div class="overflow-h">
+                                        <strong class="color-blue">Info <small class="pull-right"><em>2 days ago</em></small></strong>
+                                        <p>Your friend request has been denied :)</p>
+                                    </div>
+                                </div>
+                                <div class="alert-blocks alert-blocks-error alert-dismissable">
+                                    <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                                    <img class="rounded-x" src="assets/img/testimonials/img6.jpg" alt="">
+                                    <div class="overflow-h">
+                                        <strong class="color-red">Denied! <small class="pull-right"><em>2 days ago</em></small></strong>
+                                        <p>Your friend request has been denied.</p>
+                                    </div>
+                                </div>
+                                <div class="alert-blocks alert-dismissable">
+                                    <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                                    <i class="icon-custom rounded-x icon-bg-dark fa fa-magic"></i>
+                                    <div class="overflow-h">
+                                        <strong class="color-dark">Default <small class="pull-right"><em>Just now</em></small></strong>
+                                        <p><strong>Adam Johnson's</strong> friend request pending..</p>
+                                    </div>
+                                </div>
+                                <div class="alert-blocks alert-blocks-pending alert-dismissable">
+                                    <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                                    <i class="icon-custom rounded-x icon-bg-yellow fa fa-info"></i>
+                                    <div class="overflow-h">
+                                        <strong class="color-yellow">Pending <small class="pull-right"><em>Just now</em></small></strong>
+                                        <p><strong>Adam Johnson's</strong> friend request pending..</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+</div>

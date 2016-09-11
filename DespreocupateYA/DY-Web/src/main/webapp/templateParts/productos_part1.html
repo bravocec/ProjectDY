@@ -1,0 +1,251 @@
+<div class="shop-product">
+    <div class="content container">
+        <div class="row">
+             <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3" style="padding-bottom: -20px">
+                <div class="col-sm-4 result-category">
+                    <h2>{{productos.titulo}}</h2>
+                </div>
+                <div class="row illustration-v2">
+                    <div class="col-md-6">
+                        <div class="product-img product-img-brd">
+                            <img style="max-height:150px" class="full-width img-responsive" src="assets/img/productos/croquetas_1.jpg" alt="">
+                            <!--a class="add-to-cart" href="#productos"><i class="fa fa-shopping-cart"></i>Ir!</a-->
+                            <div class="shop-rgba-dark-green rgba-banner">Nuevo</div>
+                        </div> 
+                        <div class="product-description product-description-brd margin-bottom-30">
+                            <div class="overflow-h margin-bottom-5">
+                                <div class="pull-left">
+                                    <h4 class="title-price"><a href="#productos">Croquetas Turing</a></h4>
+                                    <span class="gender text-uppercase">Costo de envío</span>
+                                    <span class="gender">Costo por kilogramo</span>
+                                </div>    
+                                <div class="product-price">
+                                    <span class="title-price">$ 200.00</span>
+                                    <span class="title-price">$ 40.00</span>
+                                </div>
+                            </div>    
+                            <ul class="list-inline product-ratings">
+                                <li><i class="rating-selected fa fa-star"></i></li>
+                                <li><i class="rating-selected fa fa-star"></i></li>
+                                <li><i class="rating-selected fa fa-star"></i></li>
+                                <li><i class="rating fa fa-star"></i></li>
+                                <li><i class="rating fa fa-star"></i></li>
+                                <li class="like-icon"><a onclick="alert('AGREGAR A FAVORITOS')">Agregar a favoritos <i class="fa fa-heart"></i></a></li>
+                            </ul> 
+                                                 <h3 class="shop-product-title">Cantidad</h3>
+                        <form name="f1" class="product-quantity sm-margin-bottom-20">
+                            <button type='button' class="quantity-button" name='subtract' onclick='javascript: subtractQty();' value='-'>-</button>
+                            <input type='text' class="quantity-field" name='qty' value="1" id='qty'/>
+                            <button type='button' class="quantity-button" name='add' onclick='javascript: document.getElementById("qty").value++;' value='+'>+</button>
+                            <button type="button" class="btn-u pull-right" style="margin: 7px" onclick="location.href='#carrito'">Contratar!</button>
+                        </form>
+                        </div>                                   
+                    </div>                 
+                </div>                           
+            </div>
+        </div>
+        <div class="tab-v5">     
+            <ul class="nav nav-tabs" role="tablist">
+                <li id="descripcion" class="active" ><a id="description" role="tab" data-toggle="tab">Descripción</a></li>
+                <li id="reseñas"><a id="reviews" role="tab" data-toggle="tab">Reseñas (1)</a></li>
+            </ul>
+        <div class="tab-content">
+            <div class="tab-pane fade in active" id="description">
+                <div class="row">
+                    <div class="col-md-7">
+                        <p>Descripción del producto / servicio</p><br>
+                        <h3 class="heading-md">Especificaciones</h3>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <ul class="list-unstyled specifies-list">
+                                    <li><i class="fa fa-caret-right"></i>Proveedor: <span>Turing</span></li>
+                                    <li><i class="fa fa-caret-right"></i>Servicio a domicilio: <span>Si</span></li>
+                                    <li><i class="fa fa-caret-right"></i>Producto / servicio: <span>Meseros</span></li>
+                                    <li><i class="fa fa-caret-right"></i>Promoción: <span>Cada 5 servicios se efecturá el 50% de descuento</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+            <div class="tab-pane fade" id="reviews">
+                <div class="product-comment margin-bottom-40">
+                    <div class="product-comment-in">
+                        <img class="product-comment-img rounded-x" src="assets/img/team/01.jpg" alt="">
+                        <div class="product-comment-dtl">
+                            <h4>Sergio <small>22 días</small></h4>
+                            <p>Excelente servicio</p>
+                            <ul class="list-inline product-ratings">
+                                <!-- <li class="reply"><a href="#">Reply</a></li> -->
+                                <li class="pull-right">
+                                    <ul class="list-inline">
+                                        <li><i class="rating-selected fa fa-star"></i></li>
+                                        <li><i class="rating-selected fa fa-star"></i></li>
+                                        <li><i class="rating-selected fa fa-star"></i></li>
+                                        <li><i class="rating fa fa-star"></i></li>
+                                        <li><i class="rating fa fa-star"></i></li>
+                                    </ul>
+                                </li>    
+                            </ul>
+                        </div>
+                    </div>    
+                </div>
+                <h3 class="heading-md margin-bottom-30">Agregar reseña</h3>
+                <form action="assets/php/demo-contacts-process.php" method="post" id="sky-form3" class="sky-form sky-changes-4">
+                    <fieldset>
+                        <div class="margin-bottom-30">
+                            <label class="label-v2">Nombre: </label>
+                            <label class="input">
+                                <input type="text" name="nombre" id="nombre">
+                            </label>
+                        </div>    
+
+                        <div class="margin-bottom-30">
+                            <label class="label-v2">Email: </label>
+                            <label class="input">
+                                <input type="email" name="email" id="email">
+                            </label>
+                        </div>    
+
+                        <div class="margin-bottom-30">
+                            <label class="label-v2">Reseña: </label>
+                            <label class="textarea">
+                                <textarea rows="4" name="reseña" id="reseña"></textarea>
+                            </label>
+                        </div>    
+                    </fieldset>    
+
+                    <footer class="review-submit">
+                        <label class="label-v2">Valoración: </label>
+                        <div class="stars-ratings">
+                            <input type="radio" name="stars-rating" id="stars-rating-5">
+                            <label for="stars-rating-5"><i class="fa fa-star"></i></label>
+                            <input type="radio" name="stars-rating" id="stars-rating-4">
+                            <label for="stars-rating-4"><i class="fa fa-star"></i></label>
+                            <input type="radio" name="stars-rating" id="stars-rating-3">
+                            <label for="stars-rating-3"><i class="fa fa-star"></i></label>
+                            <input type="radio" name="stars-rating" id="stars-rating-2">
+                            <label for="stars-rating-2"><i class="fa fa-star"></i></label>
+                            <input type="radio" name="stars-rating" id="stars-rating-1">
+                            <label for="stars-rating-1"><i class="fa fa-star"></i></label>
+                        </div>
+                        <button type="button" class="btn-u btn-u-sea-shop btn-u-sm pull-right" onclick="alert('AGREGAR RESEÑA A LA BITACORA')">Enviar</button>
+                    </footer>
+                </form>
+            </div>            
+        </div>
+            <div class="row">
+                    <div class="heading heading-v1 margin-bottom-20">
+                    <h3>Productos sugeridos</h3>
+                </div>
+
+                <div class="illustration-v2 margin-bottom-60">
+                    <div class="customNavigation margin-bottom-25">
+                        <a class="owl-btn prev rounded-x"><i class="fa fa-angle-left"></i></a>
+                        <a class="owl-btn next rounded-x"><i class="fa fa-angle-right"></i></a>
+                    </div>
+
+                    <ul class="list-inline owl-slider-v4">
+                        <li class="item">
+                            <a href="#"><img class="img-responsive" src="assets/img/productos/meseros_gapper.jpg" alt=""></a>
+                            <div class="product-description-v2">
+                                <div class="margin-bottom-5">
+                                    <h4 class="title-price"><a href="#">Meseros Gapper</a></h4>
+                                    <span class="title-price">$95.00</span>
+                                </div>    
+                                <ul class="list-inline product-ratings">
+                                    <li><i class="rating-selected fa fa-star"></i></li>
+                                    <li><i class="rating-selected fa fa-star"></i></li>
+                                    <li><i class="rating-selected fa fa-star"></i></li>
+                                    <li><i class="rating fa fa-star"></i></li>
+                                    <li><i class="rating fa fa-star"></i></li>
+                                </ul>    
+                            </div>
+                        </li>
+                        <li class="item">
+                            <a href="#"><img class="img-responsive" src="assets/img/productos/meseros_dy.jpg" alt=""></a>
+                            <div class="product-description-v2">
+                                <div class="margin-bottom-5">
+                                    <h4 class="title-price"><a href="#">Meseros Despreocupateya</a></h4>
+                                    <span class="title-price">$60.00</span>
+                                    <span class="title-price line-through">$95.00</span>
+                                </div>    
+                                <ul class="list-inline product-ratings">
+                                    <li><i class="rating-selected fa fa-star"></i></li>
+                                    <li><i class="rating-selected fa fa-star"></i></li>
+                                    <li><i class="rating-selected fa fa-star"></i></li>
+                                    <li><i class="rating fa fa-star"></i></li>
+                                    <li><i class="rating fa fa-star"></i></li>
+                                </ul>    
+                            </div>
+                        </li>
+                        <li class="item">
+                            <a href="#"><img class="img-responsive" src="assets/img/thumb/08.jpg" alt=""></a>
+                            <div class="product-description-v2">
+                                <div class="margin-bottom-5">
+                                    <h4 class="title-price"><a href="#">XXXXX</a></h4>
+                                    <span class="title-price">$95.00</span>
+                                </div>    
+                                <ul class="list-inline product-ratings">
+                                    <li><i class="rating-selected fa fa-star"></i></li>
+                                    <li><i class="rating-selected fa fa-star"></i></li>
+                                    <li><i class="rating-selected fa fa-star"></i></li>
+                                    <li><i class="rating fa fa-star"></i></li>
+                                    <li><i class="rating fa fa-star"></i></li>
+                                </ul>    
+                            </div>
+                        </li>
+                        <li class="item">
+                            <a href="#"><img class="img-responsive" src="assets/img/thumb/06.jpg" alt=""></a>
+                            <div class="product-description-v2">
+                                <div class="margin-bottom-5">
+                                    <h4 class="title-price"><a href="#">XXXXXX</a></h4>
+                                    <span class="title-price">$95.00</span>
+                                </div>    
+                                <ul class="list-inline product-ratings">
+                                    <li><i class="rating-selected fa fa-star"></i></li>
+                                    <li><i class="rating-selected fa fa-star"></i></li>
+                                    <li><i class="rating-selected fa fa-star"></i></li>
+                                    <li><i class="rating fa fa-star"></i></li>
+                                    <li><i class="rating fa fa-star"></i></li>
+                                </ul>    
+                            </div>
+                        </li>
+                        <li class="item">
+                            <a href="#"><img class="img-responsive" src="assets/img/thumb/04.jpg" alt=""></a>
+                            <div class="product-description-v2">
+                                <div class="margin-bottom-5">
+                                    <h4 class="title-price"><a href="#">XXXXXX</a></h4>
+                                    <span class="title-price">$95.00</span>
+                                </div>    
+                                <ul class="list-inline product-ratings">
+                                    <li><i class="rating-selected fa fa-star"></i></li>
+                                    <li><i class="rating-selected fa fa-star"></i></li>
+                                    <li><i class="rating-selected fa fa-star"></i></li>
+                                    <li><i class="rating fa fa-star"></i></li>
+                                    <li><i class="rating fa fa-star"></i></li>
+                                </ul>    
+                            </div>
+                        </li>
+                        <li class="item">
+                            <a href="#"><img class="img-responsive" src="assets/img/thumb/03.jpg" alt=""></a>
+                            <div class="product-description-v2">
+                                <div class="margin-bottom-5">
+                                    <h4 class="title-price"><a href="#">XXXXXX</a></h4>
+                                    <span class="title-price">$95.00</span>
+                                </div>    
+                                <ul class="list-inline product-ratings">
+                                    <li><i class="rating-selected fa fa-star"></i></li>
+                                    <li><i class="rating-selected fa fa-star"></i></li>
+                                    <li><i class="rating-selected fa fa-star"></i></li>
+                                    <li><i class="rating fa fa-star"></i></li>
+                                    <li><i class="rating fa fa-star"></i></li>
+                                </ul>    
+                            </div>
+                        </li>    
+                    </ul>
+                </div> 
+            </div>
+        </div>        
+    </div>
+</div>

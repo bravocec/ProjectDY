@@ -1,0 +1,68 @@
+<div class="container content profile">
+    <div class="row">
+        <div class="col-md-3 md-margin-bottom-40">
+            <img class="img-responsive profile-img margin-bottom-20" src="assets/img/user/isotipo_Turing.png" alt="">
+            <ul class="list-group sidebar-nav-v1 margin-bottom-40" id="sidebar-nav-1">
+                <li class="list-group-item">
+                    <a href="#administrador"><i class="fa fa-bar-chart-o"></i> Resumen de proveedores</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="#administrador_proveedores"><i class="fa fa-group"></i> Proveedores</a>
+                </li>                     
+                <li class="list-group-item active">
+                    <a><i class="fa fa-cog"></i> Media</a>
+                </li>                                   
+            </ul>               
+        </div>
+        <div class="col-md-9">
+            <div class="heading heading-v1 margin-bottom-20">
+                <h2>{{administrador_media.titulo}}</h2>
+            </div>
+            <form name="form1" method="post" action="" class="sky-form">
+                <fieldset>
+                    <section>
+                        <label class="label">Categoría</label>
+                        <label class="select">
+                        <select name="select" onchange="slctryole(this,this.form.select2)">
+                                <option>- - - - - -</option>
+                                <option value="hogar">Hogar</option>
+                                <option value="index">Index</option>
+                                <option value="mascotas">Mascotas</option>
+                                <option value="tecnologia">Tecnología</option>
+                        </select>
+                    </section>
+                </fieldset>
+                <fieldset>
+                    <section>
+                        <label class="label">Sección</label>
+                        <label class="select">
+                        <select name="select2" onchange="slctryole(this,this.form.select3)">
+                                <option>- - - - - -</option>
+                        </select>
+                    </section>
+                </fieldset>
+                <fieldset>
+                    <section>
+                        <label class="label">Adjuntar imagen</label>
+                        <label for="file" class="input input-file">
+                            <div class="button"><input id="file" onchange="this.parentNode.nextSibling.value = this.value" type="file">Adjuntar</div><input readonly="" type="text">
+                        </label>
+                    </section>
+                </fieldset>				
+                <fieldset>
+                    <section class="col col-6">
+                        <label class="label">Actual</label>
+                        <img class="img-responsive" src="assets/img/index/img18.jpg" alt="">                             
+                    </section>
+                    <section class="col col-6">
+                        <label class="label">Vista previa</label>
+                        <img class="img-responsive" src="assets/img/index/img18.jpg" alt="">
+                    </section>
+                </fieldset>
+                <footer>
+                        <button class="btn-u pull-right" type="submit">Guardar</button>
+                </footer>					
+            </form>
+        </div>
+    </div>
+</div>

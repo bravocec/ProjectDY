@@ -1,0 +1,107 @@
+<div class="container content">
+    <div class="breadcrumbs">
+        <ul class="breadcrumb" style="text-align: center">
+            <li>Dirección de envío</li>
+            <li>Pago</li>
+            <li class="active">{{confirmacion.titulo}}</li>
+        </ul>
+    </div>
+    <form class="shopping-cart" action="#">
+        <section>
+            <div class="table-responsive">
+                <table class="table table-striped">                                    
+                    <tr>
+                        <td>
+                            <div class="product-it-in">
+                                <a>Celular</a>
+                            </div>  
+                        </td>
+                        <td>
+                            <button type="button" class="close" onclick="alert('ELIMINAR PRODUCTO DE CARRITO')"><span>&times;</span><span class="sr-only">Cerrar</span></button>
+                        </td>                                
+                    </tr>
+                    <tr>
+                        <td class="product-in-table">
+                            <img class="img-responsive" src="assets/img/productos/telefono.png" alt="">
+                        </td>                                
+                        <td>
+                            <button type='button' class="quantity-button" name='subtract' onclick='javascript: subtractQty4();' value='-'>-</button>
+                            <input type='text' class="quantity-field" name='qty4' value="1" id='qty4'/>
+                            <button type='button' class="quantity-button" name='add' onclick='javascript: document.getElementById("qty4").value++;' value='+'>+</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="shop-red">
+                            <strike>$ 500.00</strike> - 40%
+                        </td>
+                        <td>
+                            <strong> $ 200.00</strong>
+                        </td>
+                    </tr>
+                </table>
+                <table class="table table-striped">                                    
+                    <tr>
+                        <div class="col-sm-4 sm-margin-bottom-30">
+                            <p>Código de promoción</p>
+                            <input class="form-control margin-bottom-10" name="code" type="text">
+                            <button style="width: 100%" type="button" class="btn-u btn-u-sea-shop" onclick="alert('VALIDAR CUPON Y APLICAR DESCUENTO EN EL TOTAL')">Aplicar</button>
+                        </div>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                Subtotal:
+                            </p>
+                        </td>                                
+                        <td>
+                            <p>
+                                $ 200.00
+                            </p>
+                        </td>                                  
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                Costo de envío
+                            </p>
+                        </td>                                
+                        <td>
+                            <p>
+                                $ 0.00
+                            </p>
+                        </td>                                  
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                Total:
+                            </p>
+                        </td>                                
+                        <td>
+                            <p>
+                                $ 200.00
+                            </p>
+                        </td>                                  
+                    </tr>  
+                </table>                                           
+            </div>    
+        </section>	
+    </form>  
+    <div class="col-md-4">    
+        <div class="service">
+            <div class="desc">
+                <h4>Dirección de envío</h4>
+                <p><i class="fa fa-home service-icon"></i> Cerrada San Francisco 6 interior 202, Del Valle, 03100, 5544505213</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">    
+        <div class="service">
+            <div class="desc">
+                <h4>Método de pago</h4>
+                <p><i class="fa fa-cc-amex service-icon"></i> Cinthia Alvarez<br>Terminación: 6666</p>                        
+            </div>
+        </div>
+    </div>
+    <button style="width: 100%" type="button" class="btn-u btn-u-sea-shop" onclick="location.href='#index'">Finalizar compra</button>   
+</div>

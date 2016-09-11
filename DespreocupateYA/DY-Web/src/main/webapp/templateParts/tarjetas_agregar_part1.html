@@ -1,0 +1,71 @@
+<div class="container content">
+     <div class="heading heading-v1 margin-bottom-20">
+        <h2>{{tarjetas_agregar.titulo}}</h2>
+    </div>
+    <form action="#" id="sky-form" class="sky-form">
+        <fieldset>
+            <section>
+                <div class="inline-group">
+                    <label class="radio"><input name="radio-inline" checked="" type="radio"><i class="rounded-x"></i>Visa</label>
+                    <label class="radio"><input name="radio-inline" type="radio"><i class="rounded-x"></i>MasterCard</label>
+                </div>
+            </section>
+            <section>
+                <label class="label">Nombre del titular:</label>
+                <label class="input">
+                    <input name="name" type="text">
+                    <b class="tooltip tooltip-bottom-right">Como aparece en la tarjeta</b>
+                </label>
+            </section>
+            <div class="row">
+                <section class="col col-10">
+                    <label class="label">Número de la tarjeta:</label>
+                    <label class="input">
+                        <input name="card" id="card" type="text">
+                    </label>
+                </section>
+                <section class="col col-2">
+                    <label class="label">CVV2</label>    
+                    <label class="input">
+                        <input name="cvv" id="cvv" type="text">
+                    </label>
+                </section>
+            </div>
+            <div class="row">
+                <section class="col col-5">
+                    <label class="label">Mes</label>
+                    <label class="select">
+                        <select name="month">
+                            <option value="0" selected="" disabled="">Mes</option>
+                            <option value="1">Enero</option>
+                            <option value="1">Febrero</option>
+                            <option value="3">Marzo</option>
+                            <option value="4">Abril</option>
+                            <option value="5">Mayo</option>
+                            <option value="6">Junio</option>
+                            <option value="7">Julio</option>
+                            <option value="8">Agosto</option>
+                            <option value="9">Septiembre</option>
+                            <option value="10">Octubre</option>
+                            <option value="11">Noviembre</option>
+                            <option value="12">Diciembre</option>
+                        </select>
+                        <i></i>
+                    </label>
+                </section>
+                <section class="col col-3">
+                    <label class="label">Año</label>    
+                    <label class="input">
+                        <input name="year" id="year" type="text">
+                    </label>
+                </section>
+                <section class="col col-4">
+                    <label class="label"></label>    
+                    <label class="input">
+                        <button style="width: 100%" class="btn-u pull-right" type="submit" ng-click="send()">Agregar tarjeta</button>
+                    </label>
+                </section>
+            </div>
+        </fieldset>
+    </form>
+</div>

@@ -1,0 +1,272 @@
+<div class="container content profile">
+    <div class="row">
+        <div class="container">
+            <ul class="breadcrumb-v5">
+                <li><a href="#administrador_proveedores">Proveedores</a></li>
+                <li class="active">{{administradordetalles.titulo}}</li>
+            </ul>
+        </div>
+        <div class="col-md-3 md-margin-bottom-40">
+            <img class="img-responsive profile-img margin-bottom-20" src="assets/img/user/isotipo_Turing.png" alt="">
+            <ul class="list-group sidebar-nav-v1 margin-bottom-40" id="sidebar-nav-1">
+                <li class="list-group-item">
+                    <a href="#administrador" style="color: #555"><i class="fa fa-bar-chart-o"></i> Resumen de proveedores</a>
+                </li>
+                <li class="list-group-item active" style="color: #555">
+                    <a><i class="fa fa-group"></i> Proveedores</a>
+                </li>                     
+                <li class="list-group-item">
+                    <a href="#administrador_media" style="color: #555"><i class="fa fa-cog"></i> Media</a>
+                </li>                
+            </ul>               
+        </div>
+        <div class="col-md-9">
+            <!-- <div class="profile-body">   -->                  
+            <div class="margin-bottom-20">
+                <div class="md-margin-bottom-20">
+                    <div class="panel panel-profile no-bg">
+                        <div class="tab-v1">
+                            <ul class="nav nav-tabs margin-bottom-20">
+                                <li id="lidatos" class="active"><a id="datos" data-toggle="tab" >Datos personales</a></li>
+                                <li id="lidocs"><a id="docs" data-toggle="tab">Documentación</a></li>
+                                <li id="liestatus"><a id="status" data-toggle="tab">Estatus</a></li>
+                            </ul>
+                            <div class="tab-content">					
+                                <!--Datos personales-->
+                                <div id="datos_personales" class="tab-pane fade in active">
+                                    <div id="accordion-v1" class="panel-group acc-v1">
+                                        <div class="row margin-bottom-30">
+                                            <form action="#" id="sky-form1" class="sky-form reg-">
+                                                <fieldset>
+                                                    <div class="row">
+                                                        <section class="col col-6">
+                                                            <label class="label">Nombre(s)</label>
+                                                            <label class="input">
+                                                                <i class="icon-append fa fa-user"></i>
+                                                                <input type="text" name="nombres"  ng-readonly="true" ng-model="data.nombres">
+                                                            </label>
+                                                        </section>
+                                                        <section class="col col-6">
+                                                            <label class="label">Apellido(s)</label>
+                                                            <label class="input">
+                                                                <i class="icon-append fa fa-user"></i>
+                                                                <input type="text" name="apellidos"  ng-readonly="true" ng-model="data.apellidos">
+                                                            </label>
+                                                        </section>
+                                                    </div>	
+                                                    <div class="row">
+                                                        <section class="col col-6">
+                                                            <label class="label">Email</label>
+                                                            <label class="input">
+                                                                <i class="icon-append fa fa-envelope"></i>
+                                                                <input type="email" name="email" class="form-control" required="requried" ng-readonly="true" ng-model="data.email">
+                                                            </label>
+                                                        </section>
+                                                        <section class="col col-6">
+                                                            <label class="label">Razón Social</label>
+                                                            <label class="input">
+                                                                <i class="icon-append fa fa-user"></i>
+                                                                <input type="text" name="razon_social" ng-readonly="true" ng-model="data.razon_social">
+                                                            </label>
+                                                        </section>
+                                                    </div>    
+                                                    <div class="row">
+                                                        <section class="col col-6">
+                                                            <label class="label">RFC</label>
+                                                            <label class="input">
+                                                                <i class="icon-append fa fa-user"></i>
+                                                                <input type="text" name="rfc" ng-readonly="true" ng-model="data.rfc">
+                                                            </label>
+                                                        </section>
+                                                        <section class="col col-6">
+                                                            <label class="label">Teléfono</label>
+                                                            <label class="input">
+                                                                <i class="icon-append fa fa-phone"></i>
+                                                                <input type="tel" id="phone" name="telefono"  class="ng-valid" ng-readonly="true" ng-model="data.telefono">
+                                                            </label>
+                                                        </section>
+                                                    </div>								
+                                                    <div class="row">
+                                                        <section class="col col-6">
+                                                            <label class="label">Teléfono movil</label>
+                                                            <label class="input">
+                                                                <i class="icon-append fa fa-phone"></i>
+                                                                <input type="tel" name="telefono_movil" ng-readonly="true" ng-model="data.telefono_movil">
+                                                            </label>
+                                                        </section>
+                                                        <section class="col col-6">
+                                                            <label class="label">Calle</label>
+                                                            <label class="input">
+                                                                <i class="icon-append fa fa-book"></i>
+                                                                <input type="text" name="calle"  ng-readonly="true" ng-model="data.calle">
+                                                            </label>
+                                                        </section>
+                                                    </div>
+                                                    <div class="row">
+                                                        <section class="col col-6">
+                                                            <label class="label">N° exterior</label>
+                                                            <label class="input">
+                                                                <i class="icon-append fa fa-book"></i>
+                                                                <input type="text" name="numero_exterior"  ng-readonly="true" ng-model="data.noExterior">
+                                                            </label>
+                                                        </section>
+                                                        <section class="col col-6">
+                                                            <label class="label">N° interior</label>
+                                                            <label class="input">
+                                                                <i class="icon-append fa fa-book"></i>
+                                                                <input type="text" name="numero_interior" ng-readonly="true" ng-model="data.noInterior">
+                                                            </label>
+                                                        </section>
+                                                    </div>
+                                                    <div class="row">
+                                                        <section class="col col-6">
+                                                            <label class="label">Colonia</label>
+                                                            <label class="input">
+                                                                <i class="icon-append fa fa-book"></i>
+                                                                <input type="text" name="colonia"  ng-readonly="true" ng-model="data.colonia">
+                                                            </label>
+                                                        </section>
+                                                        <section class="col col-6">
+                                                            <label class="label">Delegación</label>
+                                                            <label class="input">
+                                                                <i class="icon-append fa fa-book"></i>
+                                                                <input type="text" name="delegación"  ng-readonly="true" ng-model="data.delegacion">
+                                                            </label>
+                                                        </section>
+                                                    </div>
+                                                    <div class="row">
+                                                        <section class="col col-6">
+                                                            <label class="label">Estado</label>
+                                                            <label class="input">
+                                                                <i class="icon-append fa fa-book"></i>
+                                                                <input type="text" name="estado"  ng-readonly="true" ng-model="data.estado">
+                                                            </label>
+                                                        </section>
+                                                        <section class="col col-6">
+                                                            <label class="label">Código postal</label>
+                                                            <label class="input">
+                                                                <i class="icon-append fa fa-book"></i>
+                                                                <input type="text" name="codigo_postal"  ng-readonly="true" ng-model="data.cp">
+                                                            </label>
+                                                        </section>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <section class="col col-6">
+                                                            <label class="label">Entre la calle</label>
+                                                            <label class="input">
+                                                                <i class="icon-append fa fa-book"></i>
+                                                                <input type="text" name="caalle_x" ng-readonly="true" ng-model="data.entreCalle">
+                                                            </label>
+                                                        </section>
+                                                        <section class="col col-6">
+                                                            <label class="label">y la calle</label>
+                                                            <label class="input">
+                                                                <i class="icon-append fa fa-book"></i>
+                                                                <input type="text" name="calle_y" ng-readonly="true" ng-model="data.ycalle">
+                                                            </label>
+                                                        </section>
+                                                    </div>                     
+                                                </fieldset>
+                                            </form>
+                                        </div>																											
+                                    </div>
+                                </div>	
+                                <!--Datos personales-->
+                                <!--Documentación-->
+                                <div id="documentacion" class="tab-pane fade">
+                                    <div id="accordion-v2" class="panel-group acc-v1">
+                                        <div class="col-lg-12">
+                                            <form class="reg-page sky-form">
+                                                <fieldset>
+                                                    <section>
+                                                        <label class="label">Imagen de sucursal</label>
+                                                        <label for="file" class="input input-file">
+                                                            <div class="button"><input id="fileImg" file-model="imgSucursal" onchange="this.parentNode.nextSibling.value = this.value" type="file">Adjuntar</div><input id="fileImgInput" readonly="" type="text">
+                                                        </label>
+                                                    </section>
+                                                    <section class="col col-6">
+                                                        <label class="label">Actual</label>
+                                                        <img id="imgActual" class="img-responsive" src="assets/img/index/img18.jpg" alt="">                             
+                                                    </section>
+                                                </fieldset>	
+                                                <fieldset>
+                                                    <section>
+                                                        <label class="label">Identificación</label>
+                                                        <label for="file" class="input input-file">
+                                                            <div class="button"><input id="fileIfe" file-model="fileIfe" onchange="this.parentNode.nextSibling.value = this.value" type="file">Adjuntar</div><input readonly="" type="text">
+                                                        </label>
+                                                    </section>
+                                                    <section id="ifeSection">
+                                                        <label class="label">Actual</label>
+                                                        <img id="ifeImg" class="img-responsive" src="assets/img/pdfIcon.png" alt="" style="cursor: pointer;">
+                                                    </section>
+
+                                                </fieldset>																
+                                                <fieldset>
+                                                    <section>
+                                                        <label class="label">Comprobante de domicilio</label>
+                                                        <label for="file" class="input input-file">
+                                                            <div class="button"><input id="fileCD" file-model="fileCD" onchange="this.parentNode.nextSibling.value = this.value" type="file">Adjuntar</div><input readonly="" type="text">
+                                                        </label>
+                                                    </section>
+                                                    <section id="cdSection" >
+                                                        <label class="label">Actual</label>
+                                                        <img id="imgFileCD" class="img-responsive" src="assets/img/pdfIcon.png" alt="" style="cursor: pointer;">
+                                                    </section>
+                                                </fieldset>	
+                                                <fieldset>
+                                                    <section>
+                                                        <label class="label">Estado de cuenta</label>
+                                                        <label for="file" class="input input-file">
+                                                            <div class="button"><input id="fileEdoCuenta" file-model="fileEdoCuenta" onchange="this.parentNode.nextSibling.value = this.value" type="file">Adjuntar</div><input readonly="" type="text">
+                                                        </label>
+                                                    </section>
+                                                    <section id="edoCuentaSection" >
+                                                        <label class="label">Actual</label>
+                                                        <img id="imgEdoCuenta" class="img-responsive" src="assets/img/pdfIcon.png" alt="" style="cursor: pointer;">                             
+                                                    </section>
+                                                </fieldset>
+                                                <footer>													
+                                                    <button id="guardarImagenes" class="btn-u pull-right" ng-click="guardarImagenes()">Guardar</button>
+                                                </footer>													
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Documentación-->
+                                <!--Estatus-->
+                                <div id="estatus" class="tab-pane fade">
+                                    <div id="accordion-v2" class="panel-group acc-v1">
+                                        <div class="col-md-6 col-sm-8 col-sm-offset-2">
+                                            <!-- General Unify Forms -->
+                                            <form name="form1" method="post" action="" class="sky-form">
+                                                <fieldset>
+                                                    <section>
+                                                        <label class="label">Estatus</label>
+                                                        <label class="select">
+                                                            <select>
+                                                                <option>- - - - - -</option>
+                                                                <option value="0">Aceptado</option>
+                                                                <option value="1">Pendiente</option>
+                                                                <option value="2">Rechazado</option>
+                                                            </select>
+                                                    </section>
+                                                </fieldset>
+                                                <footer>
+                                                    <button class="btn-u pull-right" type="submit">Guardar</button>
+                                                </footer>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Estatus-->	
+                            </div>
+                        </div>
+                    </div>
+                </div>									
+            </div>
+            <!-- </div> -->
+        </div>
+    </div>
+</div>

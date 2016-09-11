@@ -1,0 +1,320 @@
+<div class="container profile">
+    <div class="row">
+        <div class="container">
+            <ul class="breadcrumb-v5">
+                <li><a href="index.html#/proveedor_productos_servicios_listado">Produtos / servicios</a></li>
+                <li class="active">Detalles</li>
+            </ul>
+        </div>          
+        <div class="col-md-3 md-margin-bottom-40">
+            <img class="img-responsive profile-img margin-bottom-20" src="assets/img/user/isotipo_Turing.png" alt="" />
+            <ul class="list-group sidebar-nav-v1 margin-bottom-40" id="sidebar-nav-1">
+                <li class="list-group-item">
+                    <a href="#proveedor_index"><i class="fa fa-user"></i> Perfil de proveedor</a>
+                </li>       
+                <li class="list-group-item">
+                    <a href="#proveedor_pedidos_abiertos"><i class="fa fa-history"></i> Pedidos abiertos</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="#proveedor_pedidos_historial"><i class="fa fa-history"></i> Historial de pedidos</a>
+                </li>   
+                <li class="list-group-item active">
+                    <a><i class="fa fa-cubes"></i> Productos / Servicios</a>
+                </li>                                
+            </ul>
+            <ul class="list-group sidebar-nav-v1 margin-bottom-40" id="sidebar-nav-1">
+                <li class="list-group-item">
+                    <a href="#proveedor_datos_personales"><i class="fa fa-cog"></i> Datos personales</a>
+                </li>      
+                <li class="list-group-item">
+                    <a href="#proveedor_documentacion"><i class="fa fa-cog"></i> Documentación</a>
+                </li>                 
+                <li class="list-group-item">
+                    <a href="#proveedor_sucursales"><i class="fa fa-cog"></i> Sucursales</a>
+                </li>     
+                <li class="list-group-item">
+                    <a href="#proveedor_personal"><i class="fa fa-group"></i> Personal</a>
+                </li>                                
+            </ul>
+            <div class="panel-heading-v2 overflow-h">
+                    <h2 class="heading-xs pull-left"><i class="fa fa-bar-chart-o"></i> Reporte</h2>
+                    <a href="#"><i class="fa fa-cog pull-right"></i></a>
+            </div>
+            <h3 class="heading-xs">Ventas finalizadas<span class="pull-right">50</span></h3>
+            <div class="progress progress-u progress-xxs">
+                    <div style="width: 25%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="92" role="progressbar" class="progress-bar progress-bar-u">
+                    </div>
+            </div>
+            <h3 class="heading-xs">Productos vendidos <span class="pull-right">120</span></h3>
+            <div class="progress progress-u progress-xxs">
+                    <div style="width: 60%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="85" role="progressbar" class="progress-bar progress-bar-blue">
+                    </div>
+            </div>
+            <h3 class="heading-xs">Devoluciones <span class="pull-right">10</span></h3>
+            <div class="progress progress-u progress-xxs margin-bottom-40">
+                <div style="width: 5%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="64" role="progressbar" class="progress-bar progress-bar-dark">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="profile-body">
+                <div class="heading heading-v1 margin-bottom-20">
+                    <h2>{{proveedor_productos_servicios_detalles.titulo}}</h2>
+                </div>
+                <div class="row">
+                    <form action="#" class="sky-form">
+                        <fieldset>
+                            <div class="col-md-3">
+                                <section>
+                                    <label class="label">Producto o Servicio</label>
+                                    <label class="select">
+                                        <select>
+                                            <option>- - - - - -</option>
+                                            <option value="0">Producto</option>
+                                            <option value="1">Servicio</option>
+                                        </select>
+                                        <i></i>
+                                    </label>
+                                </section>
+                            </div>       
+                            <div class="col-md-3">
+                                <section>
+                                    <label class="label">Marca</label>
+                                    <label class="input">
+                                        <i class="icon-append fa fa-cubes"></i>
+                                        <input type="text">
+                                    </label>
+                                </section>
+                            </div>
+                            <div class="col-md-3">
+                                <section>
+                                    <label class="label">Modelo</label>
+                                    <label class="input">
+                                        <i class="icon-append fa fa-cubes"></i>
+                                        <input type="text">
+                                    </label>
+                                </section>
+                            </div> 
+                            <div class="col-md-3">
+                                <section>
+                                    <label class="label">SKU</label>
+                                    <label class="input">
+                                        <i class="icon-append fa fa-question-circle"></i>
+                                        <input type="text">
+                                        <b class="tooltip tooltip-bottom-right">Identificador único del producto</b>
+                                    </label>
+                                </section>
+                            </div>                             
+                        </fieldset>
+                        <fieldset>
+                            <div class="col-md-3">
+                                <section>
+                                    <label class="label">Descripción</label>
+                                    <label class="input">
+                                        <i class="icon-append fa fa-cubes"></i>
+                                        <input type="text">
+                                    </label>
+                                </section>
+                            </div>      
+                            <div class="col-md-3">
+                                <section>
+                                    <label class="label">Precio</label>
+                                    <label class="input">
+                                        <i class="icon-append fa fa-dollar"></i>
+                                        <input type="text">
+                                    </label>
+                                </section>
+                            </div>
+                            <div class="col-md-3">
+                                <section>
+                                    <label class="label">Cargo por envío</label>
+                                    <label class="input">
+                                        <i class="icon-append fa fa-dollar"></i>
+                                        <input type="text">
+                                    </label>
+                                </section>
+                            </div>
+                            <div class="col-md-3">
+                                <section>
+                                    <label class="label">Cantidad</label>
+                                    <label class="input">
+                                        <i class="icon-append fa fa-calculator"></i>
+                                        <input type="text">
+                                    </label>
+                                </section>
+                            </div>                            
+                        </fieldset>
+                        <fieldset>
+                            <div class="col-lg-4">
+                                <section>
+                                    <label class="label">Categoría</label>
+                                    <label class="select">
+                                        <select>
+                                            <option>- - - - - -</option>
+                                            <option value="0">Hogar</option>
+                                            <option value="1">Mascotas</option>
+                                        </select>
+                                        <i></i>
+                                    </label>
+                                </section>
+                            </div>       
+                            <div class="col-lg-4">
+                                <section>
+                                    <label class="label">Sub categoría 1</label>
+                                    <label class="select">
+                                        <select>
+                                            <option>- - - - - -</option>
+                                            <option value="0">Hogar</option>
+                                            <option value="1">Mascotas</option>
+                                        </select>
+                                        <i></i>
+                                    </label>
+                                </section>
+                            </div> 
+                            <div class="col-lg-4">
+                                <section>
+                                    <label class="label">Sub categoría 2</label>
+                                    <label class="select">
+                                        <select>
+                                            <option>- - - - - -</option>
+                                            <option value="0">Hogar</option>
+                                            <option value="1">Mascotas</option>
+                                        </select>
+                                        <i></i>
+                                    </label>
+                                </section>
+                            </div> 
+                        </fieldset>                        
+                        <fieldset>
+                            <div class="col-md-3">
+                                <section>
+                                    <label class="label">Atributo Color</label>
+                                    <label class="select">
+                                        <select>
+                                            <option>- - - - - -</option>
+                                            <option value="0">Negro</option>
+                                            <option value="1">Azul</option>
+                                        </select>
+                                        <i></i>
+                                    </label>
+                                </section>
+                            </div>       
+                            <div class="col-md-3">
+                                <section>
+                                    <label class="label">Atributo Peso</label>
+                                    <label class="select">
+                                        <select>
+                                            <option>- - - - - -</option>
+                                            <option value="0">1 Kg</option>
+                                            <option value="1">2 Kg</option>
+                                        </select>
+                                        <i></i>
+                                    </label>
+                                </section>
+                            </div> 
+                            <div class="col-md-3">
+                                <section>
+                                    <label class="label">Atributo XXXXX</label>
+                                    <label class="select">
+                                        <select>
+                                                <option>- - - - - -</option>
+                                                <option value="0">a</option>
+                                                <option value="1">b</option>
+                                        </select>
+                                        <i></i>
+                                    </label>
+                                </section>
+                            </div>  
+                            <div class="col-md-3">
+                                <section>
+                                    <label class="label">Atributo XXXXX</label>
+                                    <label class="select">
+                                        <select>
+                                            <option>- - - - - -</option>
+                                            <option value="0">a</option>
+                                            <option value="1">b</option>
+                                        </select>
+                                        <i></i>
+                                    </label>
+                                </section>
+                            </div>                             
+                        </fieldset>  
+                        <fieldset> 
+                            <div class="col-md-3">
+                                <section>
+                                    <label class="label">Alto</label>
+                                    <label class="input">
+                                        <i class="icon-append fa fa-cubes"></i>
+                                        <input type="text">
+                                    </label>
+                                </section>                                
+                            </div>
+                            <div class="col-md-3">
+                                <section>
+                                    <label class="label">Ancho</label>
+                                    <label class="input">
+                                        <i class="icon-append fa fa-cubes"></i>
+                                        <input type="text">
+                                    </label>
+                                </section>                                
+                            </div>
+                            <div class="col-md-3">
+                                <section>
+                                    <label class="label">Largo</label>
+                                    <label class="input">
+                                        <i class="icon-append fa fa-cubes"></i>
+                                        <input type="text">
+                                    </label>
+                                </section>                                
+                            </div>   
+                            <div class="col-md-3">
+                                <section>
+                                    <label class="label">Peso</label>
+                                    <label class="input">
+                                        <i class="icon-append fa fa-cubes"></i>
+                                        <input type="text">
+                                    </label>
+                                </section>                                
+                            </div>                            
+                        </fieldset>
+                        <fieldset>
+                            <section>
+                                <label class="label">Detalles del producto</label>
+                                <label class="textarea">
+                                    <i class="icon-append fa fa-cubes"></i>
+                                    <textarea rows="2"></textarea>
+                                </label>
+                            </section>                                          
+                        </fieldset>
+                        <fieldset>
+                            <section>
+                                <label class="label">Imagen principal</label>
+                                <label for="file" class="input input-file">
+                                    <div class="button"><input id="file" onchange="this.parentNode.nextSibling.value = this.value" type="file">Adjuntar</div><input readonly="" type="text"><b class="tooltip tooltip-bottom-right">Formato .xxx | tamaño 50px X 70px</b>
+                                </label>
+                            </section> 
+                            <section>
+                                <label class="label">Imagen 2</label>
+                                <label for="file" class="input input-file">
+                                    <div class="button"><input id="file" onchange="this.parentNode.nextSibling.value = this.value" type="file">Adjuntar</div><input readonly="" type="text"><b class="tooltip tooltip-bottom-right">Formato .xxx | tamaño 50px X 70px</b>
+                                </label>
+                            </section> 
+                            <section>
+                                <label class="label">Imagen 3</label>
+                                <label for="file" class="input input-file">
+                                    <div class="button"><input id="file" onchange="this.parentNode.nextSibling.value = this.value" type="file">Adjuntar</div><input readonly="" type="text"><b class="tooltip tooltip-bottom-right">Formato .xxx | tamaño 50px X 70px</b>
+                                </label>
+                            </section>                             
+                        </fieldset>   
+                        <fieldset>
+                            <section>    
+                                <button class="btn-u pull-right" ng-click="submit()">Actualizar</button>
+                            </section>                                                               
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
