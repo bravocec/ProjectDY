@@ -6,8 +6,10 @@
 package turing.solutions.dy.persistence.dao.domicilios;
 
 import java.io.Serializable;
-import java.util.List;
+import org.hibernate.Query;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 import turing.solutions.dy.persistence.dao.GenericDAOImpl;
 
 /**
@@ -19,8 +21,12 @@ import turing.solutions.dy.persistence.dao.GenericDAOImpl;
 public class DomiciliosDAOImpl<T extends Serializable> extends GenericDAOImpl<T> implements DomiciliosDAO<T> {
 
     @Override
+    @Transactional(propagation = Propagation.MANDATORY)
     public T findById(Integer o) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Query query = getSessionFactory().getCurrentSession().getNamedQuery(ENTITY_NAME + ".findByIdDomicilio");
+        query.setParameter("idDomicilio", o);
+        Object obj = query.uniqueResult();
+        return obj != null ? (T) obj : null;
     }
     
     

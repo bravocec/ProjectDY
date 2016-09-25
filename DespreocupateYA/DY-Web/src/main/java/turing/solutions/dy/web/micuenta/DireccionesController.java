@@ -10,6 +10,8 @@ import java.util.List;
 import java.util.Map;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -22,8 +24,8 @@ import turing.solutions.dy.util.enums.DYGeneralCodeMessages;
  *
  * @author Alan
  */
-@RestController//Siempre va, por que es el que hace controlador Web la clase, y con ese te puedes comunicar.
-@RequestMapping("/micuenta")//El contexto general de micuenta
+@RestController
+@RequestMapping("/micuenta")
 public class DireccionesController {
     
     private Logger log = Logger.getLogger(DireccionesController.class);
@@ -35,12 +37,11 @@ public class DireccionesController {
     
     
     @RequestMapping(value = "/obtenerDirecciones",method = RequestMethod.GET,produces = "application/json")
-    public Map<String,Object> getDireccionesActuales(@RequestParam(value = "idUsuario") String idUsuario){
+    public Map<String,Object> getDireccionesActuales(){
         Map<String,Object> map = new HashMap<>();
-        log.info("--Obteniendo las direcciones del usuario "+idUsuario);
+        log.info("Obteniendo las direcciones");
         try{
-            List<Domicilios> domicilios = this.direccionesService.getDomicilios(idUsuario);
-            log.info("Tamaño de la respuesta "+domicilios.size());
+            List<Domicilios> domicilios = this.direccionesService.getDomicilios();
             map.put("direcciones", domicilios != null ? domicilios : 0);
             map.put(STATUS, DYGeneralCodeMessages.SUCCESS.getCodigo());
         }catch(Exception e){
@@ -48,6 +49,63 @@ public class DireccionesController {
             map.put(STATUS, DYGeneralCodeMessages.ERROR_GENERAL.getCodigo());
         }
         return map;
+    }
+    
+    
+    @RequestMapping(value="/guardaDomicilio",method = RequestMethod.POST,produces = "application/json")
+    public Map<String,Object> guardaDomicilio(@RequestBody Domicilios domicilio){
+        Map<String,Object> map = new HashMap<>();
+        log.info("Guardando las direcciones");
+        log.info(domicilio.toString());
+        try{
+            this.direccionesService.guardaDireccion(domicilio);
+            map.put(STATUS, DYGeneralCodeMessages.SUCCESS.getCodigo());
+        }catch(Exception e){
+            log.error("Error al guardar la direccion",e);
+            map.put(STATUS, DYGeneralCodeMessages.ERROR_GENERAL.getCodigo());
+        }
+        return map;
+    }
+    
+    @RequestMapping(value="/eliminarDomicilio",method = RequestMethod.POST,produces = "application/json")
+    public Map<String,Object> eliminarDomicilio(@RequestBody Domicilios domicilio){
+        Map<String,Object> response = new HashMap<>();
+        log.info("Borrando el domicilio "+domicilio.getIdDomicilio()); 
+        try{
+            this.direccionesService.borraDomicilio(domicilio);
+        }catch(Exception e){
+            log.error("Error al eliminar",e);
+            response.put(STATUS, DYGeneralCodeMessages.ERROR_GENERAL.getCodigo());
+        }
+        return response;
+    }
+    
+    
+    @RequestMapping(value="/domicilio/{idDireccion}",method = RequestMethod.GET,produces = "application/json")
+    public Map<String,Object> getDireccionById(@PathVariable Integer idDireccion){
+        Map<String,Object> response = new HashMap<>();
+        try{
+            Domicilios domicilio = this.direccionesService.getDomicilioById(idDireccion);
+            response.put("domicilio", domicilio);
+            response.put(STATUS, DYGeneralCodeMessages.SUCCESS.getCodigo());
+        }catch(Exception e){
+            log.error("Error al eliminar el domicilio",e);
+            response.put(STATUS, DYGeneralCodeMessages.ERROR_GENERAL.getCodigo());
+        }
+        return response;
+    }
+    
+    @RequestMapping(value="/actualizarDomicilio",method = RequestMethod.POST,produces = "application/json")
+    public Map<String,Object> actualizaDomicilio(@RequestBody Domicilios domicilio){
+        Map<String,Object> response = new HashMap<>();
+        try{
+            this.direccionesService.actualizaDomicilio(domicilio);
+            response.put(STATUS, DYGeneralCodeMessages.SUCCESS.getCodigo());
+        }catch(Exception e){
+            log.error("No se pudo actualizar el domicilio ",e);
+            response.put(STATUS, DYGeneralCodeMessages.ERROR_GENERAL.getCodigo());
+        }
+        return response;
     }
     
 }

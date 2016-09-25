@@ -6,6 +6,7 @@
 package turing.solutions.dy.persistence.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -47,6 +48,7 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Domicilios.findByPrincipal", query = "SELECT d FROM Domicilios d WHERE d.principal = :principal"),
     @NamedQuery(name = "Domicilios.findByLatitud", query = "SELECT d FROM Domicilios d WHERE d.latitud = :latitud"),
     @NamedQuery(name = "Domicilios.findByLongitud", query = "SELECT d FROM Domicilios d WHERE d.longitud = :longitud")})
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Domicilios implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
@@ -57,9 +59,9 @@ public class Domicilios implements Serializable {
     @Basic(optional = false)
     @Column(name = "CALLE")
     private String calle;
-    @Basic(optional = false)
     @Column(name = "NUM_INT")
     private String numInt;
+    @Basic(optional = false)
     @Column(name = "NUM_EXT")
     private String numExt;
     @Basic(optional = false)
@@ -255,7 +257,7 @@ public class Domicilios implements Serializable {
 
     @Override
     public String toString() {
-        return "turing.solutions.dy.persistence.model.Domicilios[ idDomicilio=" + idDomicilio + " ]";
+        return "Domicilios{" + "idDomicilio=" + idDomicilio + ", calle=" + calle + ", numInt=" + numInt + ", numExt=" + numExt + ", colonia=" + colonia + ", delegacionMunicipio=" + delegacionMunicipio + ", cp=" + cp + ", estado=" + estado + ", entreCalles=" + entreCalles + ", descripcion=" + descripcion + ", principal=" + principal + ", latitud=" + latitud + ", longitud=" + longitud + '}';
     }
-    
+
 }

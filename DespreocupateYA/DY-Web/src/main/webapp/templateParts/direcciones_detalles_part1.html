@@ -1,39 +1,23 @@
-<div class="container content">	
+ <div class="container content">    
     <div class="heading heading-v1 margin-bottom-20">
         <h2>{{direcciones_detalles.titulo}}</h2>
     </div>
     <div class="row margin-bottom-30">
-        <form action="#" id="sky-form4" class="sky-form">
-            <fieldset>
-                <div class="row">
-                    <section class="col col-6">
-                        <label class="label">Nombre(s)</label>
-                        <label class="input">
-                            <i class="icon-append fa fa-user"></i>
-                            <input type="text" name="nombres" required="required" ng-model="data.nombres">
-                        </label>
-                    </section>
-                    <section class="col col-6">
-                        <label class="label">Apellido(s)</label>
-                        <label class="input">
-                            <i class="icon-append fa fa-user"></i>
-                            <input type="text" name="apellidos" required="required" placeholder="Álvarez Rodríguez">
-                        </label>
-                    </section>
-                </div>								
-                <div class="row">
+        <form  id="sky-form4" class="sky-form" name="data" novalidate ng-submit="actualiza()">
+            <fieldset>                          
+            <div class="row">
                     <section class="col col-6">
                         <label class="label">Calle</label>
                         <label class="input">
                             <i class="icon-append fa fa-book"></i>
-                            <input type="text" name="calle" required="required" placeholder="Calle 1">
+                            <input type="text" name="callee" class="form-control" required ng-model="datadedit.calle">
                         </label>
                     </section>
                     <section class="col col-6">
                         <label class="label">N° exterior</label>
                         <label class="input">
                             <i class="icon-append fa fa-book"></i>
-                            <input type="text" name="numero_exterior" required="required" placeholder="1">
+                            <input type="text" name="numero_exterior" class="form-control" required ng-model="datadedit.numExt">
                         </label>
                     </section>
                 </div>
@@ -42,100 +26,74 @@
                         <label class="label">N° interior</label>
                         <label class="input">
                             <i class="icon-append fa fa-book"></i>
-                            <input type="text" name="numero_interior" placeholder="2">
+                            <input type="text" name="numero_interior" ng-model="datadedit.numInt">
                         </label>
                     </section>
                     <section class="col col-6">
                         <label class="label">Código postal</label>
                         <label class="input">
                             <i class="icon-append fa fa-book"></i>
-                            <input type="text" name="codigo_postal" required="required"  placeholder="03100">
+                            <input type="text" name="codigo_postal" class="form-control" required ng-model="datadedit.cp">
                         </label>
                     </section>
                 </div>
                 <div class="row">
                     <section class="col col-6">
                         <label class="label">Estado</label>
-                            <label class="select">
-                                <select name="estado" required="required">
-                                    <option value="0" selected="" disabled="disabled">Distrito Federal</option>
-                                    <option value="1">Distrito Federal</option>
-                                    <option value="2">Nuevo León</option>
-                                    <option value="3">Morelos</option>
-                                    <option value="4">Michoacan</option>
-                                </select>
-                                <i></i>
-                            </label>
+                        <label class="input">
+                            <i class="icon-append fa fa-book"></i>
+                            <input type="text" name="estado_entidad" class="form-control" required ng-model="datadedit.estado">
+                        </label>
                     </section>
                     <section class="col col-6">
                         <label class="label">Delegación</label>
-                            <label class="select">
-                                <select name="delegación" required="required">
-                                    <option value="0" selected="" disabled="disabled">Delegación 1</option>
-                                    <option value="1">Delegación 1</option>
-                                    <option value="2">Delegación 2</option>
-                                    <option value="3">Delegación 3</option>
-                                    <option value="4">Delegación 4</option>
-                                </select>
-                                <i></i>
-                            </label>
+                        <label class="input">
+                            <i class="icon-append fa fa-book"></i>
+                            <input type="text" name="delegacion_municipio" class="form-control" required ng-model="datadedit.delegacionMunicipio">
+                        </label>
                     </section>
                 </div>
                 <div class="row">
                     <section class="col col-6">
                         <label class="label">Colonia</label>
-                            <label class="select">
-                                <select name="colonia" required="required">
-                                    <option value="0" selected="" disabled="disabled">Colonia 1</option>
-                                    <option value="1">Colonia 1</option>
-                                    <option value="2">Colonia 2</option>
-                                    <option value="3">Colonia 3</option>
-                                    <option value="4">Colonia 4</option>
-                                </select>
-                                <i></i>
-                            </label>
+                        <label class="input">
+                            <i class="icon-append fa fa-book"></i>
+                            <input type="text" name="colonia_ciudad" class="form-control" required ng-model="datadedit.colonia">
+                        </label>
                     </section>
                     <section class="col col-6">
-                        <label class="label">Entre la calle</label>
+                        <label class="label">Entre calles</label>
                         <label class="input">
-                            <i class="icon-append fa fa-asterisk"></i>
-                            <input type="text" name="calle_x" placeholder="Calle X">
+                            <i class="icon-append fa fa-book"></i>
+                            <input type="text" name="entre_calles" class="form-control" ng-model="datadedit.entreCalles">
                         </label>
                     </section>                        
                 </div> 
                 <div class="row">
-                    <section class="col col-6">
-                        <label class="label">y la calle</label>
-                        <label class="input">
-                            <i class="icon-append fa fa-asterisk"></i>
-                            <input type="text" name="calle_y" placeholder="Calle Y">
-                        </label>
-                    </section>
-                    <section class="col col-6">
+                    <section class="col" style="width: 100%;">
                         <label class="label">Intrucciones especiales</label>
                         <label class="input">
                             <i class="icon-append fa fa-comment"></i>
-                            <input type="text" name="instrucciones_especiales" placeholder="Fachada color azul">
+                            <!-- ng-model="datadedit.addresses_attributes[0].special_instructions" -->
+                            <input type="text" class="form-control" name="instrucciones_especiales" ng-model="datadedit.descripcion" >
+                            <input type="hidden" name="datadedit.idDomicilio">
+                            <input type="hidden" name="datadedit.latitud">
+                            <input type="hidden" name="datadedit.longitud">
                         </label>
                     </section>                        
-                </div>                   
+                </div>   
                 <div class="row">
-                    <section class="col col-6 pull-right">
-                        <label class="label">Borrar dirección</label>
-                        <label class="checkbox">
-                            <input type="checkbox" name="borrar_dirección"><i></i> Si
-                        </label>
-                    </section>
                     <section class="col col-6 pull-right">
                         <label class="label">Dirección principal</label>
+                        <!-- ng-model="datadedit.addresses_attributes[0].main" -->
                         <label class="checkbox">
-                            <input type="checkbox" name="subscription" id="subscription"><i></i> Si
+                            <input type="checkbox" name="subscription" id="subscription" ng-model="datadedit.principal"><i></i> Si
                         </label>
-                    </section>                    
-                </div> 
+                    </section>
+                </div>  
                 <div class="row">
-                    <button style="width: 100%" class="btn-u pull-right" type="submit">Guardar</button>
-                </div>
+                    <button  style="width: 100%" class="btn-u pull-right" type="submit" >Guardar</button>
+                </div>                   
             </fieldset>
         </form>
     </div>

@@ -1,4 +1,4 @@
-index.controller("clienteDireccionesController", function ($scope, $http, $httpParamSerializer, $cookies, $location) {
+index.controller("clienteDireccionesController", function ($scope, $http, $httpParamSerializer, $cookies, $location,$route) {
     initCosasVarias();//Siempre
     $scope.cliente_direcciones = {};
     $scope.cliente_direcciones.titulo = "Direcciones";
@@ -14,10 +14,7 @@ index.controller("clienteDireccionesController", function ($scope, $http, $httpP
 
     var requestObtenerDirecciones = {
         url: commonContext + "/micuenta/obtenerDirecciones",
-        method: "GET",
-        params: {
-            idUsuario: userInfo.id_usuario
-        }
+        method: "GET"
     };
 
     var direcciones = new Array();
@@ -25,15 +22,24 @@ index.controller("clienteDireccionesController", function ($scope, $http, $httpP
         if (responseOk(successResponse)) {
             var resposeData = successResponse.data;
 
-            if (resposeData.direcciones === 0) {
-                console.log("el usuario no cuenta con direcciones aun");
+            if (resposeData.direcciones == 0) {
+                mensajeDY("Direcciones","Aun no cuentas con direcciones");
             } else {
-                console.log("Las direcciones del usuario son");
                 console.log(resposeData.direcciones);
+                for(var key in resposeData.direcciones){
+                    var dir = resposeData.direcciones[key];
+                    var primera = "";
+                    if(dir.numInt == null){
+                        primera += dir.calle + " " + dir.numExt ;
+                    }else{
+                        primera += dir.calle + " " + dir.numExt + " " +dir.numInt;
+                    }
+                    direcciones.push({
+                        direccion: primera + ", " + dir.colonia + ", " + dir.delegacionMunicipio + ", " + dir.estado,
+                        idDomicilio : dir.idDomicilio
+                    });
+                }
                 
-                direcciones.push({
-                    direccion: "Avenida de los peces, Int 1, Col. Shehwuweghuifdwe"
-                });
             }
 
 
@@ -47,6 +53,33 @@ index.controller("clienteDireccionesController", function ($scope, $http, $httpP
     }, function errorCallback(error) {
         mensajeDY("Oops!", "Algo salió mal, intentalo mas tarde");
     });
+
+    $scope.eliminarDireccion = function(id){
+        console.log("Direccion a borrar "+id);
+        var request = {
+            url : commonContext + "/micuenta/eliminarDomicilio",
+            method : "POST",
+            data :  {
+                idDomicilio : id
+            }
+        };
+        $http(request).then(function(success){
+            if(responseOk(success)){
+                mensajeDY("Direcciones","Dirección eliminada con éxito");
+                $route.reload();
+            }else{
+                mensajeDY("Oops!", "Algo salió mal, intentalo mas tarde");
+            }
+        },function(error){
+            console.log(error);
+            mensajeDY("Oops!", "Algo salió mal, intentalo mas tarde");
+        });
+    };
+
+    $scope.detalleDireccion = function(id){
+        $cookies.put("idDomicilio",id);
+        $location.path("/direcciones_detalles");
+    };
 
 
 });

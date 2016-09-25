@@ -5,6 +5,7 @@
  */
 package turing.solutions.dy.business.micuenta;
 
+import java.util.Map;
 import turing.solutions.dy.persistence.model.Usuarios;
 
 /**
@@ -16,5 +17,7 @@ public interface DatosPersonalesService {
     Usuarios getDatosPersonales(Integer idUsuario);
     
     String actualizaDatos(String idUsuario,String nombres,String apellidos,String email,String telefono);
+    
+    Map<String, Object> acualizaPassword(Map<String, String> elements);
     
 }

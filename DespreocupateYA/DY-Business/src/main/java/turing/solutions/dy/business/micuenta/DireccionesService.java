@@ -14,6 +14,13 @@ import turing.solutions.dy.persistence.model.Domicilios;
  */
 public interface DireccionesService {
 
-    List<Domicilios> getDomicilios(String idUsuario);
+    List<Domicilios> getDomicilios();
     
+    void guardaDireccion(Domicilios domicilio);
+    
+    void borraDomicilio(Domicilios domicilio);
+    
+    Domicilios getDomicilioById(Integer idDomicilio);
+    
+    void actualizaDomicilio(Domicilios domicilio);
 }

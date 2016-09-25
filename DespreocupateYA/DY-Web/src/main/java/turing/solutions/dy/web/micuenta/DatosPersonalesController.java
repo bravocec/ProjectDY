@@ -9,12 +9,14 @@ import java.util.HashMap;
 import java.util.Map;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import turing.solutions.dy.business.micuenta.DatosPersonalesService;
 import turing.solutions.dy.persistence.model.Usuarios;
+import turing.solutions.dy.util.enums.DYGeneralCodeMessages;
 
 /**
  *
@@ -25,6 +27,8 @@ import turing.solutions.dy.persistence.model.Usuarios;
 public class DatosPersonalesController {
     
     private static final Logger loger = Logger.getLogger(DatosPersonalesController.class);
+    
+    private static final String STATUS = "status";
     
     @Autowired
     private DatosPersonalesService service;
@@ -66,4 +70,20 @@ public class DatosPersonalesController {
         }
         return map;
     }    
+    
+    @RequestMapping(value = "/cambiarPassword",method = RequestMethod.POST,produces = "application/json")
+    public Map<String,Object> actualizaPassword(@RequestBody Map<String,String> request){
+        Map<String,Object> response = null;
+        System.out.println("New Track");
+        System.out.println(request.toString());
+        try{
+            response = service.acualizaPassword(request);
+            response.put(STATUS, DYGeneralCodeMessages.SUCCESS.getCodigo());
+        }catch(Exception e){
+            loger.error("No se pudo actualizar el password",e);
+            response = new HashMap<>();
+            response.put(STATUS, DYGeneralCodeMessages.ERROR_GENERAL.getCodigo());
+        }
+        return response;
+    }
 }

@@ -7,9 +7,9 @@
         <div class="service">
             <i class="fa fa-home service-icon"></i>
             <div class="desc">
-                <input type="radio" name="radio" checked="checked"/> Dirección principal
-                <a href="#direcciones_detalles"><p>{{item.direccion}}</p></a>
-                <u>Eliminar</u>
+                <a ng-click="detalleDireccion(item.idDomicilio)"><p>{{item.direccion}}</p></a>
+                <br/>
+                <u ng-click="eliminarDireccion(item.idDomicilio)">Eliminar</u>
             </div>
         </div>
     </div>        
@@ -18,7 +18,7 @@
             <i class="fa fa-home service-icon"></i>
             <div class="desc">
                 <input type="radio" name="radio" checked="checked"/> Dirección principal {{data.calle}}
-                <a href="#direcciones_detalles"><p>Cerrada San Francisco 6 interior 202, Del Valle, 03100, 5544505213</p></a><u>Eliminar</u>
+                <a href="#direcciones_detalles"><p>Cerrada San Francisco 6 interior 202, Del Valle, 03100,idDomicilio 5544505213</p></a><u>Eliminar</u>
             </div>
         </div>
     </div-->

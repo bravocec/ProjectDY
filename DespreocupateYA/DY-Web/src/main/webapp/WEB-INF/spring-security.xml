@@ -81,6 +81,7 @@
         
         <intercept-url pattern="/log/**" access="hasAnyRole('ROLE_CLIENTE', 'ROLE_ADMINISTRADOR')" />
         <intercept-url pattern="/micuenta/**" access="hasRole('ROLE_CLIENTE')" />
+        <intercept-url pattern="/proveedor/**" access="hasRole('ROLE_PROVEEDOR')" />
         <intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMINISTRADOR')" />
         
         <custom-filter ref="resourceServerFilter" before="PRE_AUTH_FILTER" />
