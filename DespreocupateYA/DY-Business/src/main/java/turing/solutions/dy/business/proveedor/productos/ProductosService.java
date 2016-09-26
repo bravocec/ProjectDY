@@ -6,7 +6,9 @@
 package turing.solutions.dy.business.proveedor.productos;
 
 import java.util.List;
+import turing.solutions.dy.persistence.model.CatProdServ;
 import turing.solutions.dy.persistence.model.ProductosServicios;
+import turing.solutions.dy.persistence.model.Sucursales;
 
 /**
  *
@@ -15,5 +17,11 @@ import turing.solutions.dy.persistence.model.ProductosServicios;
 public interface ProductosService {
     
     List<ProductosServicios> getProdutosByProveedor();
+    
+    List<Sucursales> getSucursalesByProveedor();
+    
+    List<CatProdServ> getAllSubCategorias();
+    
+    Integer guardaProducto(ProductosServicios ps);
     
 }

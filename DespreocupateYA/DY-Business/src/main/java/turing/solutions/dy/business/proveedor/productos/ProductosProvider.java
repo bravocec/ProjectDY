@@ -12,6 +12,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import turing.solutions.dy.business.common.CommonService;
+import turing.solutions.dy.persistence.dao.catprodserv.CatProdServDAO;
+import turing.solutions.dy.persistence.dao.productosservicios.ProductosServiciosDAO;
+import turing.solutions.dy.persistence.model.CatProdServ;
 import turing.solutions.dy.persistence.model.ProductosServicios;
 import turing.solutions.dy.persistence.model.Sucursales;
 import turing.solutions.dy.persistence.model.Usuarios;
@@ -26,6 +29,13 @@ public class ProductosProvider implements ProductosService{
     @Autowired
     private CommonService commonService;
     
+    
+    @Autowired
+    private CatProdServDAO<CatProdServ> catProdServDAO;
+    
+    @Autowired
+    private ProductosServiciosDAO<ProductosServicios> productosServiciosDAO;
+    
     private static final Logger log = Logger.getLogger(ProductosProvider.class);
     
     @Override
@@ -35,7 +45,6 @@ public class ProductosProvider implements ProductosService{
         Usuarios usuario = commonService.currentUser();
         log.info("Id del usuario "+usuario.getIdUsuario());
         List<Sucursales> sucursales = usuario.getProveedoresIdProveedor().getSucursalesList();
-        
         if(sucursales != null && !sucursales.isEmpty()){
             for(Sucursales s : sucursales){
                 if(!s.getProductosServiciosList().isEmpty()){
@@ -45,8 +54,28 @@ public class ProductosProvider implements ProductosService{
         }else{
             log.info("Sin sucursales");
         }
-        
+        log.info("Productos obtenidos "+productos.size());
         return productos;
+    }
+    
+    @Override
+    @Transactional
+    public Integer guardaProducto(ProductosServicios ps){
+        return this.productosServiciosDAO.save(ps);
+    }
+    
+    @Override
+    @Transactional(readOnly = true)
+    public List<Sucursales> getSucursalesByProveedor(){
+        Usuarios usuario = this.commonService.currentUser();
+        List<Sucursales> sucursales = usuario.getProveedoresIdProveedor().getSucursalesList();
+        return sucursales != null && !sucursales.isEmpty() ? sucursales : new ArrayList<Sucursales>();
+    }
+    
+    @Override
+    @Transactional(readOnly = true)
+    public List<CatProdServ> getAllSubCategorias(){
+        return this.catProdServDAO.findAll(CatProdServ.class);
     }
     
 }

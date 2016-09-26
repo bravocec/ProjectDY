@@ -13,16 +13,22 @@ index.controller("proveedorProductosServiciosListadoController",function($scope,
     	url : commonContext + "/proveedor/productos/list",
     	method : "GET"
     }
-    $scope.productos = new Array();
+    
     $http(requestGetProductos).then(function(success){
     	if(responseOk(success)){
-    		console.log(success);
+    		$scope.productos = success.data.productos;
     	}else{
     		mensajeDY("Productos","Hubo un error al momento de obtener tus productos, intentalo más tarde");
+    		$scope.productos = new Array();
     	}
     },function(error){
     	console.log(error);
+    	$scope.productos = new Array();
     	mensajeDY("Productos","Hubo un error al momento de obtener tus productos, intentalo más tarde");
     });
+
+    $scope.verDetalleProducto = function(idProducto){
+    	$cookies.put("currentIdProducto",idProducto);
+    };
 
 });

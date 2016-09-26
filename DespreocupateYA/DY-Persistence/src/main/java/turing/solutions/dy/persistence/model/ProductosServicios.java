@@ -5,6 +5,8 @@
  */
 package turing.solutions.dy.persistence.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Basic;
@@ -43,6 +45,7 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "ProductosServicios.findByPrecio", query = "SELECT p FROM ProductosServicios p WHERE p.precio = :precio"),
     @NamedQuery(name = "ProductosServicios.findByIsServicio", query = "SELECT p FROM ProductosServicios p WHERE p.isServicio = :isServicio"),
     @NamedQuery(name = "ProductosServicios.findByPorHora", query = "SELECT p FROM ProductosServicios p WHERE p.porHora = :porHora")})
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductosServicios implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
@@ -62,13 +65,15 @@ public class ProductosServicios implements Serializable {
     @Column(name = "DISPONIBLE")
     private boolean disponible;
     @Lob
-    @Column(name = "IMAGEN",columnDefinition="blob")
+    @Column(name = "IMAGEN")
     private byte[] imagen;
     @Column(name = "CANTIDAD")
     private Integer cantidad;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Column(name = "PRECIO")
     private Double precio;
+    @Column(name = "COSTO_ENVIO")
+    private Double costoEnvio;
     @Column(name = "IS_SERVICIO")
     private Boolean isServicio;
     @Column(name = "POR_HORA")
@@ -77,11 +82,13 @@ public class ProductosServicios implements Serializable {
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private Sucursales sucursalesIdSucursal;
     @JoinColumn(name = "CAT_PROD_SERV_ID_CATPRODSERV", referencedColumnName = "ID_CATPRODSERV")
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @ManyToOne(optional = false, fetch = FetchType.EAGER)
     private CatProdServ catProdServIdCatprodserv;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "productosServiciosIdProdserv", fetch = FetchType.LAZY)
+    @JsonIgnore
     private List<Personal> personalList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "productosServicios", fetch = FetchType.LAZY)
+    @JsonIgnore
     private List<ProductosPedido> productosPedidoList;
 
     public ProductosServicios() {
@@ -212,6 +219,14 @@ public class ProductosServicios implements Serializable {
         this.productosPedidoList = productosPedidoList;
     }
 
+    public Double getCostoEnvio() {
+        return costoEnvio;
+    }
+
+    public void setCostoEnvio(Double costoEnvio) {
+        this.costoEnvio = costoEnvio;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 0;
@@ -234,7 +249,11 @@ public class ProductosServicios implements Serializable {
 
     @Override
     public String toString() {
-        return "turing.solutions.dy.persistence.model.ProductosServicios[ idProdserv=" + idProdserv + " ]";
+        return "ProductosServicios{" + "idProdserv=" + idProdserv + ", titulo=" + titulo + ", subTitulo=" + subTitulo + ", descripcion=" + descripcion + ", disponible=" + disponible + ", imagen=" + imagen + ", cantidad=" + cantidad + ", precio=" + precio + ", costoEnvio=" + costoEnvio + ", isServicio=" + isServicio + ", porHora=" + porHora + ", sucursalesIdSucursal=" + sucursalesIdSucursal + ", catProdServIdCatprodserv=" + catProdServIdCatprodserv + '}';
     }
+
+    
+
+    
     
 }

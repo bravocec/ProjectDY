@@ -69,7 +69,8 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Imagen</th>
-                                    <th>Modelo</th>
+                                    <th>Titulo</th>
+                                    <th>Sub Titulo</th>
                                     <th>Descripción</th>
                                     <th>Precio</th>
                                     <th>Cantidad</th>
@@ -77,12 +78,13 @@
                             </thead>
                             <tbody>
                                 <tr ng-repeat="item in productos">
-                                    <td class="td-width"></td>
-                                    <td><img src="assets/img/productos/telefono.png" alt="img_telefono" /></td>
-                                    <td class="td-width"><a href="#proveedor_productos_servicios_detalles"><u class="color-green">Samsung Galaxy S7</u></a></td>
-                                    <td class="td-width">Teléfono celular</td>
-                                    <td class="td-width">$ 300.00</td>
-                                    <td class="td-width">50 </td>
+                                    <td class="td-width">{{item.idProdserv}}</td>
+                                    <td><img ng-src="data:image/png;base64,{{item.imagen}}" class="img-responsive" alt="img" /></td>
+                                    <td class="td-width"><a ng-click="verDetalleProducto(item.idProdserv)"><u class="color-green">{{item.titulo}}</u></a></td>
+                                    <td class="td-width">{{item.subtitulo}}</td>
+                                    <td class="td-width">{{item.descripcion}}</td>
+                                    <td class="td-width">${{item.precio}}</td>
+                                    <td class="td-width">{{item.cantidad}} </td>
                                 </tr>
                             </tbody>
                         </table>

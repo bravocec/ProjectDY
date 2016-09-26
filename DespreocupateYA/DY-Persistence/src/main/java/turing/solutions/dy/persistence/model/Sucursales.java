@@ -5,6 +5,8 @@
  */
 package turing.solutions.dy.persistence.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Basic;
@@ -39,6 +41,7 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Sucursales.findByDescripcion", query = "SELECT s FROM Sucursales s WHERE s.descripcion = :descripcion"),
     @NamedQuery(name = "Sucursales.findByTelefonoUsuario", query = "SELECT s FROM Sucursales s WHERE s.telefonoUsuario = :telefonoUsuario"),
     @NamedQuery(name = "Sucursales.findByEntregaDomicilio", query = "SELECT s FROM Sucursales s WHERE s.entregaDomicilio = :entregaDomicilio")})
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Sucursales implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
@@ -59,14 +62,18 @@ public class Sucursales implements Serializable {
     @Column(name = "ENTREGA_DOMICILIO")
     private Boolean entregaDomicilio;
     @OneToMany(mappedBy = "sucursalesIdSucursal", fetch = FetchType.LAZY)
+    @JsonIgnore
     private List<Telefonos> telefonosList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "sucursalesIdSucursal", fetch = FetchType.LAZY)
+    @JsonIgnore
     private List<ProductosServicios> productosServiciosList;
     @JoinColumn(name = "PROVEEDORES_ID_PROVEEDOR", referencedColumnName = "ID_PROVEEDOR")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JsonIgnore
     private Proveedores proveedoresIdProveedor;
     @JoinColumn(name = "DOMICILIOS_ID_DOMICILIO", referencedColumnName = "ID_DOMICILIO")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JsonIgnore
     private Domicilios domiciliosIdDomicilio;
 
     public Sucursales() {

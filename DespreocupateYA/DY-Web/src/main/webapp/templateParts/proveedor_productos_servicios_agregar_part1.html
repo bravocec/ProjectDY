@@ -62,57 +62,48 @@
                     <h2>{{proveedor_productos_servicios_agregar.titulo}}</h2>
                 </div>
                 <div class="row">
-                    <form action="#" class="sky-form">
+                    <form id="sky-form4" class="sky-form" name="p" ng-submit="agregarProducto()" novalidate>
                         <fieldset>
                             <div class="col-md-3">
                                 <section>
                                     <label class="label">Producto o Servicio</label>
                                     <label class="select">
-                                        <select>
-                                            <option>- - - - - -</option>
-                                            <option value="0">Producto</option>
-                                            <option value="1">Servicio</option>
+                                        <select ng-model="p.isServicio">
+                                            <option value="false">Producto</option>
+                                            <option value="true">Servicio</option>
                                         </select>
                                         <i></i>
                                     </label>
                                 </section>
                             </div>       
-                            <div class="col-md-3">
+                            <div class="col-md-5">
                                 <section>
-                                    <label class="label">Marca</label>
+                                    <label class="label">Titulo</label>
                                     <label class="input">
                                         <i class="icon-append fa fa-cubes"></i>
-                                        <input type="text">
+                                        <input type="text" name="nombre_titulo" ng-model="p.titulo" required>
                                     </label>
                                 </section>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-4">
                                 <section>
-                                    <label class="label">Modelo</label>
+                                    <label class="label">Subtitulo</label>
                                     <label class="input">
                                         <i class="icon-append fa fa-cubes"></i>
-                                        <input type="text">
+                                        <input type="text" name="nombre_subtitulo" required ng-model="p.subTitulo">
                                     </label>
                                 </section>
                             </div> 
-                            <div class="col-md-3">
-                                <section>
-                                    <label class="label">SKU</label>
-                                    <label class="input">
-                                        <i class="icon-append fa fa-question-circle"></i>
-                                        <input type="text">
-                                        <b class="tooltip tooltip-bottom-right">Identificador único del producto</b>
-                                    </label>
-                                </section>
-                            </div>                             
                         </fieldset>
                         <fieldset>
                             <div class="col-md-3">
                                 <section>
-                                    <label class="label">Descripción</label>
-                                    <label class="input">
-                                        <i class="icon-append fa fa-cubes"></i>
-                                        <input type="text">
+                                    <label class="label">Categoría</label>
+                                    <label class="select">
+                                        <select ng-model="p.catProdServIdCatprodserv.idCatprodserv">
+                                            <option ng-repeat="cat in cats" value="{{cat.idCatprodserv}}">{{cat.descripcion}}</option>
+                                        </select>
+                                        <i></i>
                                     </label>
                                 </section>
                             </div>      
@@ -121,7 +112,7 @@
                                     <label class="label">Precio</label>
                                     <label class="input">
                                         <i class="icon-append fa fa-dollar"></i>
-                                        <input type="text">
+                                        <input type="number" step="0.01" name="precio_producto" required ng-model="p.precio">
                                     </label>
                                 </section>
                             </div>
@@ -130,7 +121,7 @@
                                     <label class="label">Cargo por envío</label>
                                     <label class="input">
                                         <i class="icon-append fa fa-dollar"></i>
-                                        <input type="text">
+                                        <input type="number" step="0.01" ng-model="p.costoEnvio">
                                     </label>
                                 </section>
                             </div>
@@ -139,176 +130,42 @@
                                     <label class="label">Cantidad</label>
                                     <label class="input">
                                         <i class="icon-append fa fa-calculator"></i>
-                                        <input type="text">
+                                        <input type="number" name="cantidad_producto" required ng-model="p.cantidad">
                                     </label>
                                 </section>
-                            </div>                            
-                        </fieldset>
-                        <fieldset>
-                            <div class="col-lg-4">
-                                <section>
-                                    <label class="label">Categoría</label>
-                                    <label class="select">
-                                        <select>
-                                            <option>- - - - - -</option>
-                                            <option value="0">Hogar</option>
-                                            <option value="1">Mascotas</option>
-                                        </select>
-                                        <i></i>
-                                    </label>
-                                </section>
-                            </div>       
-                            <div class="col-lg-4">
-                                <section>
-                                    <label class="label">Sub categoría 1</label>
-                                    <label class="select">
-                                        <select>
-                                            <option>- - - - - -</option>
-                                            <option value="0">Hogar</option>
-                                            <option value="1">Mascotas</option>
-                                        </select>
-                                        <i></i>
-                                    </label>
-                                </section>
-                            </div> 
-                            <div class="col-lg-4">
-                                <section>
-                                    <label class="label">Sub categoría 2</label>
-                                    <label class="select">
-                                        <select>
-                                            <option>- - - - - -</option>
-                                            <option value="0">Hogar</option>
-                                            <option value="1">Mascotas</option>
-                                        </select>
-                                        <i></i>
-                                    </label>
-                                </section>
-                            </div> 
-                        </fieldset>                        
-                        <fieldset>
-                            <div class="col-md-3">
-                                <section>
-                                    <label class="label">Atributo Color</label>
-                                    <label class="select">
-                                        <select>
-                                            <option>- - - - - -</option>
-                                            <option value="0">Negro</option>
-                                            <option value="1">Azul</option>
-                                        </select>
-                                        <i></i>
-                                    </label>
-                                </section>
-                            </div>       
-                            <div class="col-md-3">
-                                <section>
-                                    <label class="label">Atributo Peso</label>
-                                    <label class="select">
-                                        <select>
-                                            <option>- - - - - -</option>
-                                            <option value="0">1 Kg</option>
-                                            <option value="1">2 Kg</option>
-                                        </select>
-                                        <i></i>
-                                    </label>
-                                </section>
-                            </div> 
-                            <div class="col-md-3">
-                                <section>
-                                    <label class="label">Atributo XXXXX</label>
-                                    <label class="select">
-                                        <select>
-                                                <option>- - - - - -</option>
-                                                <option value="0">a</option>
-                                                <option value="1">b</option>
-                                        </select>
-                                        <i></i>
-                                    </label>
-                                </section>
-                            </div>  
-                            <div class="col-md-3">
-                                <section>
-                                    <label class="label">Atributo XXXXX</label>
-                                    <label class="select">
-                                        <select>
-                                            <option>- - - - - -</option>
-                                            <option value="0">a</option>
-                                            <option value="1">b</option>
-                                        </select>
-                                        <i></i>
-                                    </label>
-                                </section>
-                            </div>                             
-                        </fieldset>  
-                        <fieldset> 
-                            <div class="col-md-3">
-                                <section>
-                                    <label class="label">Alto</label>
-                                    <label class="input">
-                                        <i class="icon-append fa fa-cubes"></i>
-                                        <input type="text">
-                                    </label>
-                                </section>                                
-                            </div>
-                            <div class="col-md-3">
-                                <section>
-                                    <label class="label">Ancho</label>
-                                    <label class="input">
-                                        <i class="icon-append fa fa-cubes"></i>
-                                        <input type="text">
-                                    </label>
-                                </section>                                
-                            </div>
-                            <div class="col-md-3">
-                                <section>
-                                    <label class="label">Largo</label>
-                                    <label class="input">
-                                        <i class="icon-append fa fa-cubes"></i>
-                                        <input type="text">
-                                    </label>
-                                </section>                                
-                            </div>   
-                            <div class="col-md-3">
-                                <section>
-                                    <label class="label">Peso</label>
-                                    <label class="input">
-                                        <i class="icon-append fa fa-cubes"></i>
-                                        <input type="text">
-                                    </label>
-                                </section>                                
                             </div>                            
                         </fieldset>
                         <fieldset>
                             <section>
-                                <label class="label">Detalles del producto</label>
+                                <label class="label">Sucursarl correspondiente al producto</label>
+                                <label class="select">
+                                        <select ng-model="p.sucursalesIdSucursal.idSucursal">
+                                            <option ng-repeat="suc in sucs" value="{{suc.idSucursal}}">{{suc.nombreSucursal}}</option>
+                                        </select>
+                                        <i></i>
+                                </label>
+                            </section>
+                        </fieldset>
+                        <fieldset>
+                            <section>
+                                <label class="label">Descripción del producto/servicio</label>
                                 <label class="textarea">
                                     <i class="icon-append fa fa-cubes"></i>
-                                    <textarea rows="2"></textarea>
+                                    <textarea rows="2" name="descripcion_prodcuto" required ng-model="p.descripcion"></textarea>
                                 </label>
                             </section>                                          
                         </fieldset>
                         <fieldset>
                             <section>
-                                <label class="label">Imagen principal</label>
+                                <label class="label">Imagen del Producto</label>
                                 <label for="file" class="input input-file">
-                                    <div class="button"><input id="file" onchange="this.parentNode.nextSibling.value = this.value" type="file">Adjuntar</div><input readonly="" type="text"><b class="tooltip tooltip-bottom-right">Formato .xxx | tamaño 50px X 70px</b>
+                                    <div class="button"><input id="file" onchange="this.parentNode.nextSibling.value = this.value" type="file" file-model="imagenProducto">Adjuntar</div><input readonly="" type="text" ng-model="p.nombreimagen" name="nombre_imagen" ><b class="tooltip tooltip-bottom-right">Formato .xxx | tamaño 50px X 70px</b>
                                 </label>
                             </section> 
-                            <section>
-                                <label class="label">Imagen 2</label>
-                                <label for="file" class="input input-file">
-                                    <div class="button"><input id="file" onchange="this.parentNode.nextSibling.value = this.value" type="file">Adjuntar</div><input readonly="" type="text"><b class="tooltip tooltip-bottom-right">Formato .xxx | tamaño 50px X 70px</b>
-                                </label>
-                            </section> 
-                            <section>
-                                <label class="label">Imagen 3</label>
-                                <label for="file" class="input input-file">
-                                    <div class="button"><input id="file" onchange="this.parentNode.nextSibling.value = this.value" type="file">Adjuntar</div><input readonly="" type="text"><b class="tooltip tooltip-bottom-right">Formato .xxx | tamaño 50px X 70px</b>
-                                </label>
-                            </section>                             
                         </fieldset>   
                         <fieldset>
                             <section>  
-                                <button class="btn-u pull-right" ng-click="submit()">Agregar</button>
+                                <button class="btn-u pull-right">Agregar</button>
                             </section>                                                               
                         </fieldset>
                     </form>

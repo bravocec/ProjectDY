@@ -5,6 +5,7 @@
  */
 package turing.solutions.dy.persistence.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Basic;
@@ -43,6 +44,7 @@ public class CatProdServ implements Serializable {
     @Column(name = "DESCRIPCION")
     private String descripcion;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "catProdServIdCatprodserv", fetch = FetchType.LAZY)
+    @JsonIgnore
     private List<ProductosServicios> productosServiciosList;
 
     public CatProdServ() {
